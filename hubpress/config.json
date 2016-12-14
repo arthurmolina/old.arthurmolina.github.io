@@ -5,9 +5,13 @@
     "branch": "master"
   },
   "site": {
-    "title": "Artz World"
+    "title": "Artz World",
+    "disqus": "artzblog-1"
   },
-  "socialnetwork": {},
+  "socialnetwork": {
+    "twitter": "molinaarthur",
+    "github": "arthurmolina"
+  },
   "theme": {
     "name": "saga"
   }
