@@ -1,5 +1,5 @@
 = Scripts PHP
-:updated_at: 2010-04-19
+:published_at: 2010-04-19
 :hp-image: https://itdelight.com/wp-content/uploads/2014/09/amundson-1C-lb2.jpg
 :uri-libmail: http://www.phpbrasil.com/script/dsnWCM_geQ/classe-libmail
 :uri-datagridview: http://www.phpbrasil.com/script/4NTrIz9DoAdv/datagridview
