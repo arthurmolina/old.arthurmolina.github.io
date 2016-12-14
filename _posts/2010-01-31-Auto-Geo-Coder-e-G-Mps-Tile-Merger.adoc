@@ -1,5 +1,5 @@
 = AutoGeoCoder e GMapsTileMerger
-:published_at: 201-01-31
+:published_at: 2010-01-31
 :uri-gmapstilemerger: /download/gmapstilemerger.zip
 :uri-autogeocoder: /download/autogeocoder.zip
 
