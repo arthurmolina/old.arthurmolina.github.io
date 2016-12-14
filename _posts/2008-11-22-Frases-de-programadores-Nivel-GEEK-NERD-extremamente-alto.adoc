@@ -1,0 +1,99 @@
+= Frases de programadores – Nível GEEK NERD extremamente alto
+:published_at: 2008-11-22
+:hp-image: http://4.bp.blogspot.com/-bWEX0fHdyOA/UTSAWjOFVlI/AAAAAAAATjs/nJujQaRFt98/s1600/hello02.png
+
+- Os primeiros 90% de linhas de código representam os primeiros 90% de tempo de desenvolvimento… Os 10% restantes de linhas de código representam mais outros 90% de tempo de desenvolvimento.
+Tom Cargill
+
+- Medir o progresso de programação por linhas de código é como medir a construção de aviões pelo progresso do peso.
+Bill Gates
+
+- Depurar é duas vezes mais difícil que escrever o código pela primeira vez. Portanto, se você escrever o código tão inteligentemente quanto possível, você não é, por definição, esperto o suficiente para depurar-lo.
+Brian W. Kernighan
+
+- Em teoria, não existe nenhuma diferença entre teoria e prática. Mas, na prática, existe.
+Jan L. A. van de Snepscheut
+
+- Se depuração é o processo de eliminação de bugs, então programação deve ser o processo de os colocar.
+Edsger Dijkstra
+
+- Software e catedrais são quase a mesma coisa – primeiro nós as construir, então oramos.
+–Anónimo Pregador
+
+- A meta de Ciência da Computação é de construir algo que irá durar pelo menos até termos terminado de construir isso.
+–Anónimo Consultor
+
+- O software não está acabado até o último usuário está morto.
+–Anónimo apoio membro do grupo
+
+- Melhor treinar as pessoas e arriscar que vão embora – que não fazer nada e arriscar que fiquem.
+–Técnico anónim0 Trainer
+
+- A programação é 10% da ciência, 20% talento, e 70% tentando fazer com que a ciência trabalhe com o talento.
+–Anónimo Scientist
+
+- Todos os programadores são roteiristas e todos os computadores são péssimos atores.
+–Anônimo hack ator
+
+- Código ruim não é ruim, é apenas mal compreendido.
+–Anónimo código behaviorista
+
+- É mais fácil medir algo do que entender o que foi medido.
+–Anónimo Analista
+
+- Quanto mais cedo você ficar para trás em seu trabalho, mais tempo você tem para recuperar o tempo perdido.
+–Anónimo
+
+- Quando for criada uma linguagem de programação que permita que os programadores escrevam simplesmente em Inglês, será descoberto que programadores não sabem falar Inglês.
+–Anónimo Lingüista
+
+- Benchmarks não mentem, mas mentirosos fazer benchmarks.
+–Anónimos Tester
+
+- Porque é que nunca tem tempo para fazê-lo bem, mas sempre temos tempo para fazê-lo denovo?
+–Anónimos código macaco
+
+- Vida é apenas mais um exemplo de má programação
+–Anônimo metido a Deus
+
+O oposto de um design testável é um design detestável.
+–Martin Fowler
+
+- Eu sou um programador, e quero mudar o mundo, mas eles simplesmente não me dão o código fonte.
+–Outro anônimo metido a Deus
+
+- Cada programa tem pelo menos um bug e pode ser reduzido em pelo menos uma instrução – a partir do qual, por indução, pode-se deduzir que todo o programa pode ser reduzida a uma instrução que não funciona.
+–Desconhecido
+
+- A única vez em que eu estava errado foi quando eu pensei que estivesse errado.
+–Desconhecido
+
+- Deus é Real, a não ser que declarado como Integer.
+–Desconhecido
+
+- A qualidade do código é independente de funcionar ou não.
+Jeff Esposito
+
+- Barato, rápido e realizável. Escolha apenas dois.
+–Desconhecido
+
+- Para entender recursividade, você precisa primeir entender recursividade.
+–Desconhecido
+
+- Remover a função copiar-colar das principais IDEs poderia salvar a humanidade de 90% de todos os bugs em software.
+–Desconhecido
+
+- Programaçao é como sexo – um erro e você terminará dando suporte a isso pelo resto da sua vida
+–Desconhecido
+
+- Um programador gasta 50% do seu tempo corrigindo bugs, e os outros 50% criando eles.
+Chris McGrath
+
+- Deus é um grande programador, mas uma droga de depurador.
+–Desconhecido
+
+- O software não está terminado até o último usuário estar morto.
+–Desconhecido
+
+Devo dizer que algumas me pareceram mais legais qndo em inglês. E.. fala sério, o tradutor do Google só me deu traduções completamente sem sentido…
+Retirado e traduzido de http://www.juixe.com/techknow/index.php/2008/08/17/favorite-programming-quotes/
