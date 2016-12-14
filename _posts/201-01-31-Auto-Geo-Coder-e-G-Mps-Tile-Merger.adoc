@@ -1,0 +1,24 @@
+= AutoGeoCoder e GMapsTileMerger
+:published_at: 201-01-31
+:uri-gmapstilemerger: /download/gmapstilemerger.zip
+:uri-autogeocoder: /download/autogeocoder.zip
+
+image::http://3.bp.blogspot.com/_wYrNot5Caug/S2XX9ZO2MUI/AAAAAAAAADk/eU10vl3u2ZY/s320/gmapstilemerger.jpg
+**GmapsTileMerger**
+
+Cria uma imagem a partir dos retalhos de imagens disponibilizados pelo Google Maps.  
+{uri-gmapstilemerger}[Download aqui]
+
+> Criei coragem e estou disponibilizando o pequeno programa que criei estes dias. É muito util. Não acredito que esteja ferindo nenhum termo de serviço pois estou mantendo todos os copyrights na imagem.
+
+> De qualquer forma, Senhores Google, caso esteja, me avisem, expliquem que eu tiro.
+
+image::http://1.bp.blogspot.com/_wYrNot5Caug/S2XaduwboFI/AAAAAAAAADs/ZUrufIUBWrw/s1600-h/autogeocoder.jpg
+**AutoGeoCoder**
+
+Procura pela localização geográfica de uma lista de endereços em um arquivo de Excel
+{uri-autogeocoder}[Download aqui]
+
+> Mais uma pequena criação minha. Estou bem contente com o resultado. Ele abre o arquivo em Excel (tanto xls qnto xlsx) e salva o resultado no mesmo formato. É bem rápido também.
+
+> E, mais uma vez, Senhores Google, caso eu esteja ferindo o TOS, me avisem, me expliquem, eu tiro. Só porque sinceramente não vejo problemas em automatizar um processo que já é grátis.
