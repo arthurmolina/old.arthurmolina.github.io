@@ -1,7 +1,7 @@
 = AutoGeoCoder e GMapsTileMerger
 :published_at: 2010-01-31
-:uri-gmapstilemerger: /download/gmapstilemerger.zip
-:uri-autogeocoder: /download/autogeocoder.zip
+:uri-gmapstilemerger: https://arthurmolina.github.io/download/gmapstilemerger.zip
+:uri-autogeocoder: https://arthurmolina.github.io/download/autogeocoder.zip
 
 image::http://3.bp.blogspot.com/_wYrNot5Caug/S2XX9ZO2MUI/AAAAAAAAADk/eU10vl3u2ZY/s320/gmapstilemerger.jpg
 **GmapsTileMerger**
