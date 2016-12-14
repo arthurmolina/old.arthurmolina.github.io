@@ -1,5 +1,5 @@
 = Viagem no Tempo
-:updated_at: 2011-01-11
+:published_at: 2011-01-11
 :hp-image: http://i.huffpost.com/gen/3562712/images/o-DE-VOLTA-PARA-O-FUTURO-facebook.jpg
 
 Lendo a Super Interessante desse mês sobre “destino” me foi apresentada a questão temporal sobre a teoria da relatividade. Não que seja novidade para mim. Inclusive na própria revista já foi dito que quanto maior a velocidade mais rápido no tempo a massa alcança e um exemplo que sempre achei interessante é a de levar um buraco de minhoca para uma viagem intergaláctica à velocidade da luz e voltar. No retorno o buraco de minhoca seria um “portal” para o passado, pois o tempo dentro da nave intergaláctica teria passado muito mais lento.
