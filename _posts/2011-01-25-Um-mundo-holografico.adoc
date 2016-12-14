@@ -1,5 +1,5 @@
 = Um mundo holográfico
-:updated_at: 2011-01-25
+:published_at: 2011-01-25
 :hp-image: https://62e528761d0685343e1c-f3d1b99a743ffa4142d9d7f1978d9686.ssl.cf2.rackcdn.com/files/79032/wide_article/width1356x668/image-20150423-3117-19fbrah.png
 :uri-holo: http://vimeo.com/1416530
 :uri-ivan: http://vimeo.com/user488156
