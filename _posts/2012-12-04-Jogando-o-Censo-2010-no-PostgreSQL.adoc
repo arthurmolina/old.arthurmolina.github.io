@@ -1,5 +1,5 @@
 = Jogando o Censo 2010 no PostgreSQL
-:published_at: 2012-12-4
+:published_at: 2012-12-04
 
 Existem várias razões para querer guardar os dados do Censo Universo de 2010 do IBGE no banco de dados Postgres. Uma que é mais óbvia é poder gerar querys optimizadas dos dados que quiser trabalhar. Além disso o SPSS e o ArcGIS tem opção de abrir uma query do Postgres e muitos outros sistemas também tem. Este procedimento todo deveria ser muito simples, mas a quantidade de erros nos arquivos baixados do IBGE é tão grande que esse processo me tomou um tempo absurdo e sem motivo.
 
