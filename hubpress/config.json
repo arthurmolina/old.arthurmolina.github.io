@@ -6,13 +6,16 @@
   },
   "site": {
     "title": "Artz World",
-    "description": "Assuntos",
+    "description": "$DO || !$DO : try<br> try: Commando not found.",
     "logo": "https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&h=414.91395793499044&q=40&dpr=2&auto=format&fit=max&crop=faces",
     "cover": "https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&h=414.91395793499044&q=40&dpr=2&auto=format&fit=max&crop=faces",
+    "googleAnalytics": "UA-34180643-1",
     "disqus": "artzblog-1"
   },
   "socialnetwork": {
+    "email": "artz@arthurmolina.com",
     "twitter": "htttp://twitter.com/molinaarthur",
+    "linkedin": "    https://br.linkedin.com/in/arthur-molina-a7a78525",
     "github": "http://github.com/arthurmolina"
   },
   "theme": {
