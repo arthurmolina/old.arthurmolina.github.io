@@ -1,0 +1,10 @@
+= Eu no Google Street View
+:published_at: 2011-01-25
+:hp-image: /images/artz-no-streetview.png
+
+Faz algum tempo que lembrei que teve uma vez que um carro do Google Street View tinha passado por mim, mas nunca procurei até hoje. Eu estava indo na casa do meu orientador de mestrado deixar uma parte do que eu havia escrito quando vi o estranho carro. E aqui estou:
+
+++++
+<iframe src="http://maps.google.com.br/maps?f=q&amp;source=embed&amp;hl=pt-BR&amp;geocode=&amp;aq=&amp;sll=-22.972253,-43.216792&amp;sspn=0.00403,0.010096&amp;ie=UTF8&amp;hnear=&amp;t=h&amp;layer=c&amp;cbll=-22.983074,-43.215584&amp;panoid=f39ddP74WbDQh2e_3HhRqA&amp;cbp=13,352.73,,2,9.67&amp;ll=-22.976987,-43.217412&amp;spn=0.012406,0.024118&amp;z=15&amp;output=svembed" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="425" height="240"></iframe>
+<small><a style="color: #0000ff; text-align: left;" href="http://maps.google.com.br/maps?f=q&amp;source=embed&amp;hl=pt-BR&amp;geocode=&amp;q=shopping+leblon&amp;aq=&amp;sll=-22.972253,-43.216792&amp;sspn=0.00403,0.010096&amp;ie=UTF8&amp;hq=shopping+leblon&amp;hnear=&amp;t=h&amp;layer=c&amp;cbll=-22.983074,-43.215584&amp;panoid=f39ddP74WbDQh2e_3HhRqA&amp;cbp=13,352.73,,2,9.67&amp;ll=-22.976987,-43.217412&amp;spn=0.012406,0.024118&amp;z=15">Exibir mapa ampliado</a></small>
+++++
