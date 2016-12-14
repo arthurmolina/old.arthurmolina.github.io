@@ -4,7 +4,11 @@
     "repositoryName": "arthurmolina.github.io",
     "branch": "master"
   },
+  "site": {
+    "title": "Artz World"
+  },
+  "socialnetwork": {},
   "theme": {
-    "name": "Casper"
+    "name": "casper"
   }
 }
