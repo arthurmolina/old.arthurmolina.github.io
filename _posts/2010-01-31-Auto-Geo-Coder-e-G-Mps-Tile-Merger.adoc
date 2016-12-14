@@ -1,9 +1,9 @@
 = AutoGeoCoder e GMapsTileMerger
 :published_at: 2010-01-31
+:hp-image: http://i2.tudocdn.net/img/type28/width646/height284/id179966_1.jpg
 :uri-gmapstilemerger: https://arthurmolina.github.io/download/gmapstilemerger.zip
 :uri-autogeocoder: https://arthurmolina.github.io/download/autogeocoder.zip
 
-image::http://3.bp.blogspot.com/_wYrNot5Caug/S2XX9ZO2MUI/AAAAAAAAADk/eU10vl3u2ZY/s320/gmapstilemerger.jpg[GmapsTileMerger,64,64,role=left]
 **GmapsTileMerger**
 
 Cria uma imagem a partir dos retalhos de imagens disponibilizados pelo Google Maps.  
@@ -13,7 +13,6 @@ Cria uma imagem a partir dos retalhos de imagens disponibilizados pelo Google Ma
 
 > De qualquer forma, Senhores Google, caso esteja, me avisem, expliquem que eu tiro.
 
-image::http://1.bp.blogspot.com/_wYrNot5Caug/S2XaduwboFI/AAAAAAAAADs/ZUrufIUBWrw/s320/autogeocoder.jpg[AutoGeoCoder,64,64,role=left]
 **AutoGeoCoder**
 
 Procura pela localização geográfica de uma lista de endereços em um arquivo de Excel
