@@ -1,4 +1,5 @@
 = Genesis
+:hp-image: genesis.jpg
 :hp-tags: Teste
 
 Aqui é onde tudo começa.
