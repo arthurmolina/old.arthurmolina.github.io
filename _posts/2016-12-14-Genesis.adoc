@@ -1,6 +1,6 @@
 = Genesis
-:hp-image: genesis.jpg
-:hp-tags: Teste
+:hp-image: /images/genesis.jpg
+:hp-tags: 
 
 Aqui é onde tudo começa.
 Here is where all begins.
