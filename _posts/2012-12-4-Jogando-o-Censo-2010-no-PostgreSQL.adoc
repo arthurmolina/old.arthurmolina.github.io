@@ -15,7 +15,8 @@ sudo apt-get install unoconv libreoffice unzip
 
 E o script:
 
-`#!/bin/sh
+----
+#!/bin/sh
 
 mkdir xls
 for i in $(ls *.zip)
@@ -63,7 +64,8 @@ cat ./xls/pessoa13*.csv.csv > Pessoa13.csv
 cat ./xls/pessoarenda*.csv.csv > PessoaRenda.csv
 cat ./xls/responsavel01*.csv.csv > Responsavel01.csv
 cat ./xls/responsavel02*.csv.csv > Responsavel02.csv
-cat ./xls/responsavelrenda*.csv.csv > ResponsavelRenda.csv`
+cat ./xls/responsavelrenda*.csv.csv > ResponsavelRenda.csv
+----
 
 Basta colocar todos os arquivos ZIP numa pasta juntamente com esse script e executar.
 A linha 02 cria uma pasta. Depois, nas linhas 03 a 06 são descompactados todos os XLS nessa pasta. A linha 08 faz a conversão de todos os arquivos XLS para CSV usando delimitador ; (cujo código é 59) e delimitador de texto ” (cujo código é 34) e ainda usando o encoding UTF-8.
@@ -73,7 +75,8 @@ Finalmente as linhas subsequentes usam o comando sed duas vezes, a primeira para
 Pronto. Os arquivos estão prontos para jogar no banco.
 Depois criei um pequeno script em PHP que converte o XLS com a tabela XLS que falei anteriormente que vai gerar um SQL pra executar no PostgreSQL:
 
-`passthru("unoconv -i 59,34,UTF-8 -f csv DadosCenso2010.xls");
+----
+passthru("unoconv -i 59,34,UTF-8 -f csv DadosCenso2010.xls");
 
 $dic = file('DadosCenso2010.csv');
 $sql_bd = Array();
@@ -141,6 +144,7 @@ return $titletext;
 
 $f = fopen('out.sql', 'w');
 fwrite($f, $sql_dic . "\n\n" . $sql_banco . "\n\n" . $sql_populate);
-?>`
+?>
+----
 
 Esteja certo de que o procedimento não é tão simples quanto isso. Mas é pelo menos uma pequena ajuda.
