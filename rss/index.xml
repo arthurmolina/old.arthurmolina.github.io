@@ -1,53 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Artz World]]></title><description><![CDATA[$DO || !$DO : try<br> try: Commando not found.]]></description><link>https://arthurmolina.github.io</link><image><url>https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&amp;h=414.91395793499044&amp;q=40&amp;dpr=2&amp;auto=format&amp;fit=max&amp;crop=faces</url><title>Artz World</title><link>https://arthurmolina.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Wed, 14 Dec 2016 19:15:12 GMT</lastBuildDate><atom:link href="https://arthurmolina.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Genesis]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Artz World]]></title><description><![CDATA[$DO || !$DO : try<br> try: Commando not found.]]></description><link>https://arthurmolina.github.io</link><image><url>https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&amp;h=414.91395793499044&amp;q=40&amp;dpr=2&amp;auto=format&amp;fit=max&amp;crop=faces</url><title>Artz World</title><link>https://arthurmolina.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Wed, 14 Dec 2016 19:15:47 GMT</lastBuildDate><atom:link href="https://arthurmolina.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Genesis]]></title><description><![CDATA[<div class="paragraph">
 <p>Aqui é onde tudo começa.
 Here is where all begins.</p>
 </div>
 <div class="paragraph">
 <p>Começando a usar o Hubpres e migrando os meus posts antigos do Wordpress.</p>
-</div>]]></description><link>https://arthurmolina.github.io/2016/12/14/Genesis.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2016/12/14/Genesis.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Wed, 14 Dec 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[AutoGeoCoder e GMapsTileMerger]]></title><description><![CDATA[<div class="paragraph">
-<p>image::http://3.bp.blogspot.com/_wYrNot5Caug/S2XX9ZO2MUI/AAAAAAAAADk/eU10vl3u2ZY/s320/gmapstilemerger.jpg
-<strong>GmapsTileMerger</strong></p>
-</div>
-<div class="paragraph">
-<p>Cria uma imagem a partir dos retalhos de imagens disponibilizados pelo Google Maps.
-<a href="https://arthurmolina.github.io/download/gmapstilemerger.zip">Download aqui</a></p>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>Criei coragem e estou disponibilizando o pequeno programa que criei estes dias. É muito util. Não acredito que esteja ferindo nenhum termo de serviço pois estou mantendo todos os copyrights na imagem.</p>
-</div>
-</blockquote>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>De qualquer forma, Senhores Google, caso esteja, me avisem, expliquem que eu tiro.</p>
-</div>
-</blockquote>
-</div>
-<div class="paragraph">
-<p>image::http://1.bp.blogspot.com/_wYrNot5Caug/S2XaduwboFI/AAAAAAAAADs/ZUrufIUBWrw/s1600-h/autogeocoder.jpg
-<strong>AutoGeoCoder</strong></p>
-</div>
-<div class="paragraph">
-<p>Procura pela localização geográfica de uma lista de endereços em um arquivo de Excel
-<a href="https://arthurmolina.github.io/download/autogeocoder.zip">Download aqui</a></p>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>Mais uma pequena criação minha. Estou bem contente com o resultado. Ele abre o arquivo em Excel (tanto xls qnto xlsx) e salva o resultado no mesmo formato. É bem rápido também.</p>
-</div>
-</blockquote>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>E, mais uma vez, Senhores Google, caso eu esteja ferindo o TOS, me avisem, me expliquem, eu tiro. Só porque sinceramente não vejo problemas em automatizar um processo que já é grátis.</p>
-</div>
-</blockquote>
-</div>]]></description><link>https://arthurmolina.github.io/2010/01/31/Auto-Geo-Coder-e-G-Mps-Tile-Merger.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2010/01/31/Auto-Geo-Coder-e-G-Mps-Tile-Merger.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Sun, 31 Jan 2010 00:00:00 GMT</pubDate></item><item><title><![CDATA[O Google e o TOS]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>https://arthurmolina.github.io/2016/12/14/Genesis.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2016/12/14/Genesis.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Wed, 14 Dec 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[O Google e o TOS]]></title><description><![CDATA[<div class="paragraph">
 <p>Me foi pedido um aplicativo que pudesse imprimir as imagens do Google Maps. Na real essa pessoa já estava fazendo isso, mas no metodo português. Eis que faço tudo, em Delphi. Uso uns truques pra poder mecher na própria API do Google usando javascript e um TWebBrowser. Depois que se acha o caminho das pedras fica fácil e posso dizer que o programa ficou bem elegante. Aí quando estou empacotando pra distribuir eu lembro, peraí, preciso colocar o copyright do Google nas imagens juntadas e vou caçar o termo de serviço deles pra dar uma olhada e fazer tudo nos conformes. Bem, apesar de ter descoberto uma função na própria API pra gerar copyright dos mapas (Class GCopyrightCollection) descobri que não posso disponibilizar meu pequeno aplicativo:</p>
 </div>
 <div class="paragraph">
