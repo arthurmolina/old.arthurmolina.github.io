@@ -1,0 +1,11 @@
+= Scripts PHP
+:updated_at: 2010-04-19
+:hp-image: https://itdelight.com/wp-content/uploads/2014/09/amundson-1C-lb2.jpg
+:uri-libmail: http://www.phpbrasil.com/script/dsnWCM_geQ/classe-libmail
+:uri-datagridview: http://www.phpbrasil.com/script/4NTrIz9DoAdv/datagridview
+
+Só passei pra deixar a info que fiz alguns scripts em PHP e disponibilizei no site www.phpbrasil.com. São eles:
+
+{uri-libmail}[Classe LibMail] – uma adaptação para um script já existente de um francés que dá mais poderes a função mail()
+
+{uri-datagridview}[DataGridView] – uma adaptação que fiz para um script já existente para mostrar um grid de dados do MySQL
