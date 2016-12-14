@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>OpenLayers e Google Maps vs. Internet Explorer</title>
+    <meta name="description" content="" />
+    <link href="//fonts.googleapis.com/css?family=Noto+Sans:300,400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="//arthurmolina.github.io/themes/saga/assets/css/style.css?v=1481746101871" rel="stylesheet" type="text/css">
+    <link href="//arthurmolina.github.io/themes/saga/assets/css/animate.min.css?v=1481746101871" rel="stylesheet" type="text/css">
+    <link href="https://arthurmolina.github.io/favicon.ico" rel="shortcut icon">
+    <link rel="canonical" href="https://arthurmolina.github.io/2012/08/19/Open-Layers-e-Google-Maps-vs-Internet-Explorer.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="Artz World" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="OpenLayers e Google Maps vs. Internet Explorer" />
+    <meta property="og:description" content="Estava eu desenvolvendo o meu site com mapas utilizando o OpenLayers como framework e, obviamente, testando e melhorando tudo no Firefox. A razão é muito simples: Firebug. Esta ferramenta melhora em muito a vida de um desenvolvedor front-end! Acho que depois ainda vou fazer uma avaliação dos debuggers de browsers." />
+    <meta property="og:url" content="https://arthurmolina.github.io/2012/08/19/Open-Layers-e-Google-Maps-vs-Internet-Explorer.html" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="OpenLayers e Google Maps vs. Internet Explorer" />
+    <meta name="twitter:description" content="Estava eu desenvolvendo o meu site com mapas utilizando o OpenLayers como framework e, obviamente, testando e melhorando tudo no Firefox. A razão é muito simples: Firebug. Esta ferramenta melhora em muito a vida de um desenvolvedor front-end! Acho que depois ainda vou fazer uma avaliação dos debuggers de browsers." />
+    <meta name="twitter:url" content="https://arthurmolina.github.io/2012/08/19/Open-Layers-e-Google-Maps-vs-Internet-Explorer.html" />
+    
+    <script type="application/ld+json">
+null
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="Artz World" href="https://arthurmolina.github.io/rss/" />
+</head>
+<body class="post-template">
+    <header id="header" class="animated fadeIn" style="background-image: url(https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/life_world_map.png?itok&#x3D;a9IYkqam)">
+    <div class="header-background">
+    <section class="blog-content">
+        <a id="site-url" class="blog-title" href="https://arthurmolina.github.io">Artz World</a>
+        <span class="blog-description">$DO || !$DO : try&lt;br&gt; try: Commando not found.</span>
+        <nav class="links fadeIn animated">
+            <ul>
+                <li class="rss"><a title="RSS Feed" href="/rss/"><i class="fa fa-fw fa-rss-square"></i></a></li>
+        
+            </ul>
+        </nav>
+    </section>
+    <section class="header-content">
+        <h1 class="post-title animated fadeInUp">OpenLayers e Google Maps vs. Internet Explorer</h1>
+        <span class="post-data"><span class="date animated fadeInUp"><i class="fa fa-clock-o"></i> <time class="timesince date" data-timesince="1345345200" datetime="2012-08-19T00:00" title="19 August 2012">4 years ago</time></span>
+            
+            <span class="author animated fadeInUp"><i class="fa fa-user"></i> <a href="https://arthurmolina.github.io/author/arthurmolina/">Arthur Molina</a></span></span>
+    </section>
+    </div>
+</header>
+<main id="main" class="content">
+    <article itemtype="http://schema.org/BlogPosting" class="animated fadeIn content post post">
+        <section class="post-content">
+            <div class="paragraph">
+<p>Estava eu desenvolvendo o meu site com mapas utilizando o <a href="http://www.openlayers.org/">OpenLayers</a> como framework e, obviamente, testando e melhorando tudo no Firefox. A razão é muito simples: Firebug. Esta ferramenta melhora em muito a vida de um desenvolvedor front-end! Acho que depois ainda vou fazer uma avaliação dos debuggers de browsers. Mas isto fica para um outro post.</p>
+</div>
+<div class="paragraph">
+<p>Apesar do Firefox já ter incorporado um debugger e de todos eles trabalharem com o mesmo comando de aviso de mensagens (console.log e outros), não consigo me desapegar do Firebug. Isto tem seu lado ruim também pois quando eu preciso testar a minha aplicação em outro navegador fico perdido. Até o Internet Explorer já incorporou sua ferramenta de debugger, e neste não tem como incluir um Firebug Lite como o Chrome (ou tem?). Então eu tenho que usar ele mesmo. Apesar de ter funções bem interessantes, como a possibilidade de testar a página em versões anteriores, no geral eu acho ele bem fraquinho…</p>
+</div>
+<div class="paragraph">
+<p>Mas estavamos falando de OpenLayers. Estou usando vários Basemaps (que são os mapas que ficam por baixo das camadas que você vai trabalhar. Só é permitido mostrar um basemap por vez, afinal eles ocupam todo o espaço e não seria mesmo possível ver mais de um de uma vez, a não ser que usassemos transparência (depois vou testar essa possibilidade)…</p>
+</div>
+<div class="paragraph">
+<p>Mas eis o problema. Estou usando como base o Google Maps, Google Satellite, Google Hibrid, Google Terrain e o OpenStreetMap, sendo este último a camada padrão. No Firefox, eles funcionavam numa boa. Quando ia testar a aplicação nos outros navegadores, elas abriam no OpenStreetMap (por padrão) e também parecia funcionar.</p>
+</div>
+<div class="paragraph">
+<p>Um belo dia (depois não ficou tão belo assim) vou fazer uma demonstração do aplicativo e na maquina que eu ia mostrar não tinha o Firefox, apenas o IE 9 (pelo menos era o 9!) e as outras camadas base (as do Google) simplesmente não apareciam. Depois da vergonha que passei nessa demonstração fui procurar a razão para tal e não encontrava nada sobre o assunto. Atualizei a versão do OpenLayers, na época, para a 2.11 e nada. Procurei dentro do .js do OpenLayers, dentro das folhas de estilo e nada… De tanto procurar a razão desisti.</p>
+</div>
+<div class="paragraph">
+<p>Quando estava já no final do desenvolvimento deste projeto, já em vias de entrar em produção, me empenhei mais uma vez para resolver este bug. A versão 2.12 do OpenLayers tinha acabado de sair do forno e, pensando que este bug estaria resolvido, atualizei mais uma vez. E mais uma vez, nada.</p>
+</div>
+<div class="paragraph">
+<p>Mais um bom tempo de pesquisa quando encontrei a solução em um <a href="http://drupal.org/node/1364304">fórum sobre Drupal</a>: para corrigir o problema eu precisava apenas substituir o arquivo <a href="https://arthurmolina.github.io/images/blank.gif">blank.gif</a> que estava com algum defeito e impedia a visualização das imagens do Google.</p>
+</div>
+<div class="paragraph">
+<p>Foi só substituir este arquivo nas imagens do OpenLayers que o Google Maps apareceu no IE como mágica.</p>
+</div>
+<div class="paragraph">
+<p>Mas ficam algumas perguntas:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>O que tinha no blank.gif anterior que impedia de visualizar?</p>
+</li>
+<li>
+<p>Por que este problema só ocorria no IE?</p>
+</li>
+<li>
+<p>Como eu consegui perder tanto tempo com uma coisa tão tola?</p>
+</li>
+</ul>
+</div>
+        </section>
+
+    
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'artzblog-1'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+    
+    </article>
+
+</main>
+    <footer class="animated fadeIn" id="footer">
+        <section class="colophon">
+          <section class="copyright">Copyright &copy; <span itemprop="copyrightHolder">Artz World</span>. <span rel="license">All Rights Reserved</span>.</section>
+          <section class="poweredby">Published with <a class="icon-ghost" href="http://hubpress.io">HubPress</a></section>
+        </section>
+        <section class="bottom">
+          <section class="attribution">
+            <a href="http://github.com/Reedyn/Saga">Built with <i class="fa fa-heart"></i> and Free and Open-Source Software</a>.
+          </section>
+        </section>
+    </footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+    <script src="//arthurmolina.github.io/themes/saga/assets/js/scripts.js?v=1481746101871"></script>
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-34180643-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>
