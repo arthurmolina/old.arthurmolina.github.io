@@ -1,12 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Artz World]]></title><description><![CDATA[$DO || !$DO : try<br> try: Commando not found.]]></description><link>https://arthurmolina.github.io</link><image><url>https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&amp;h=414.91395793499044&amp;q=40&amp;dpr=2&amp;auto=format&amp;fit=max&amp;crop=faces</url><title>Artz World</title><link>https://arthurmolina.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Wed, 14 Dec 2016 20:00:00 GMT</lastBuildDate><atom:link href="https://arthurmolina.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Scripts PHP]]></title><description><![CDATA[<div class="paragraph">
-<p>Só passei pra deixar a info que fiz alguns scripts em PHP e disponibilizei no site www.phpbrasil.com. São eles:</p>
-</div>
-<div class="paragraph">
-<p><a href="http://www.phpbrasil.com/script/dsnWCM_geQ/classe-libmail">Classe LibMail</a> – uma adaptação para um script já existente de um francés que dá mais poderes a função mail()</p>
-</div>
-<div class="paragraph">
-<p><a href="http://www.phpbrasil.com/script/4NTrIz9DoAdv/datagridview">DataGridView</a> – uma adaptação que fiz para um script já existente para mostrar um grid de dados do MySQL</p>
-</div>]]></description><link>https://arthurmolina.github.io/2016/12/14/Scripts-PHP.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2016/12/14/Scripts-PHP.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Wed, 14 Dec 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[PresidentA]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Artz World]]></title><description><![CDATA[$DO || !$DO : try<br> try: Commando not found.]]></description><link>https://arthurmolina.github.io</link><image><url>https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&amp;h=414.91395793499044&amp;q=40&amp;dpr=2&amp;auto=format&amp;fit=max&amp;crop=faces</url><title>Artz World</title><link>https://arthurmolina.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Wed, 14 Dec 2016 20:00:54 GMT</lastBuildDate><atom:link href="https://arthurmolina.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[PresidentA]]></title><description><![CDATA[<div class="paragraph">
 <p>Eu sei que o clima é de festa para a primeira presidentA do BrasiU, mas acontece que estou lendo “O Guia do Mochileiro das Galáxias” do brilhante Douglas Adams (NÃO ENTRE EM PÂNICO!) e tem uma passagem que ele define o que é o presidente do Governo Imperial Galático e é de um sarcasmo tão gostoso e sutil que não posso deixar de colocar neste dia tão “importante”: Só pra ressaltar que Adams é inglês, mas isso não modifica o sarcasmo com qualquer outro governo.</p>
 </div>
 <div class="paragraph">
@@ -50,7 +42,15 @@ Neste sentido, seria possível criar uma maquina do tempo (em teoria). Bastaria 
 </div>
 <div class="paragraph">
 <p>Mas indo para um nível subatômico e abordando a teoria das cordas… E se mesmo parados, como as cordas estão vibrando sempre, seria isso que faria com que o tempo andasse? Então neste caso, mesmo que o universo deixasse de se expandir ainda assim o tempo caminharia.</p>
-</div>]]></description><link>https://arthurmolina.github.io/2011/01/11/Viagem-no-Tempo.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2011/01/11/Viagem-no-Tempo.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Tue, 11 Jan 2011 00:00:00 GMT</pubDate></item><item><title><![CDATA[AutoGeoCoder e GMapsTileMerger]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>https://arthurmolina.github.io/2011/01/11/Viagem-no-Tempo.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2011/01/11/Viagem-no-Tempo.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Tue, 11 Jan 2011 00:00:00 GMT</pubDate></item><item><title><![CDATA[Scripts PHP]]></title><description><![CDATA[<div class="paragraph">
+<p>Só passei pra deixar a info que fiz alguns scripts em PHP e disponibilizei no site www.phpbrasil.com. São eles:</p>
+</div>
+<div class="paragraph">
+<p><a href="http://www.phpbrasil.com/script/dsnWCM_geQ/classe-libmail">Classe LibMail</a> – uma adaptação para um script já existente de um francés que dá mais poderes a função mail()</p>
+</div>
+<div class="paragraph">
+<p><a href="http://www.phpbrasil.com/script/4NTrIz9DoAdv/datagridview">DataGridView</a> – uma adaptação que fiz para um script já existente para mostrar um grid de dados do MySQL</p>
+</div>]]></description><link>https://arthurmolina.github.io/2010/04/19/Scripts-PHP.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2010/04/19/Scripts-PHP.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Mon, 19 Apr 2010 00:00:00 GMT</pubDate></item><item><title><![CDATA[AutoGeoCoder e GMapsTileMerger]]></title><description><![CDATA[<div class="paragraph">
 <p><strong>GmapsTileMerger</strong></p>
 </div>
 <div class="paragraph">
