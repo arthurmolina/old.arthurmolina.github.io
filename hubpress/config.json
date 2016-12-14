@@ -6,11 +6,12 @@
   },
   "site": {
     "title": "Artz World",
+    "cover": "https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&h=414.91395793499044&q=40&dpr=2&auto=format&fit=max&crop=faces",
     "disqus": "artzblog-1"
   },
   "socialnetwork": {
-    "twitter": "molinaarthur",
-    "github": "arthurmolina"
+    "twitter": "htttp://twitter.com/molinaarthur",
+    "github": "http://github.com/arthurmolina"
   },
   "theme": {
     "name": "saga"
