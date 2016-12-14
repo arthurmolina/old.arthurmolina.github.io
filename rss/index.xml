@@ -1,10 +1,145 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Artz World]]></title><description><![CDATA[$DO || !$DO : try<br> try: Commando not found.]]></description><link>https://arthurmolina.github.io</link><image><url>https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&amp;h=414.91395793499044&amp;q=40&amp;dpr=2&amp;auto=format&amp;fit=max&amp;crop=faces</url><title>Artz World</title><link>https://arthurmolina.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Wed, 14 Dec 2016 18:36:33 GMT</lastBuildDate><atom:link href="https://arthurmolina.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Genesis]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Artz World]]></title><description><![CDATA[$DO || !$DO : try<br> try: Commando not found.]]></description><link>https://arthurmolina.github.io</link><image><url>https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&amp;h=414.91395793499044&amp;q=40&amp;dpr=2&amp;auto=format&amp;fit=max&amp;crop=faces</url><title>Artz World</title><link>https://arthurmolina.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Wed, 14 Dec 2016 18:45:11 GMT</lastBuildDate><atom:link href="https://arthurmolina.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Genesis]]></title><description><![CDATA[<div class="paragraph">
 <p>Aqui é onde tudo começa.
 Here is where all begins.</p>
 </div>
 <div class="paragraph">
 <p>Começando a usar o Hubpres e migrando os meus posts antigos do Wordpress.</p>
-</div>]]></description><link>https://arthurmolina.github.io/2016/12/14/Genesis.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2016/12/14/Genesis.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Wed, 14 Dec 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Meu primeiro site hacked]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>https://arthurmolina.github.io/2016/12/14/Genesis.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2016/12/14/Genesis.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Wed, 14 Dec 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Frases de programadores – Nível GEEK NERD extremamente alto]]></title><description><![CDATA[<div class="ulist">
+<ul>
+<li>
+<p>Os primeiros 90% de linhas de código representam os primeiros 90% de tempo de desenvolvimento… Os 10% restantes de linhas de código representam mais outros 90% de tempo de desenvolvimento.
+Tom Cargill</p>
+</li>
+<li>
+<p>Medir o progresso de programação por linhas de código é como medir a construção de aviões pelo progresso do peso.
+Bill Gates</p>
+</li>
+<li>
+<p>Depurar é duas vezes mais difícil que escrever o código pela primeira vez. Portanto, se você escrever o código tão inteligentemente quanto possível, você não é, por definição, esperto o suficiente para depurar-lo.
+Brian W. Kernighan</p>
+</li>
+<li>
+<p>Em teoria, não existe nenhuma diferença entre teoria e prática. Mas, na prática, existe.
+Jan L. A. van de Snepscheut</p>
+</li>
+<li>
+<p>Se depuração é o processo de eliminação de bugs, então programação deve ser o processo de os colocar.
+Edsger Dijkstra</p>
+</li>
+<li>
+<p>Software e catedrais são quase a mesma coisa – primeiro nós as construir, então oramos.
+–Anónimo Pregador</p>
+</li>
+<li>
+<p>A meta de Ciência da Computação é de construir algo que irá durar pelo menos até termos terminado de construir isso.
+–Anónimo Consultor</p>
+</li>
+<li>
+<p>O software não está acabado até o último usuário está morto.
+–Anónimo apoio membro do grupo</p>
+</li>
+<li>
+<p>Melhor treinar as pessoas e arriscar que vão embora – que não fazer nada e arriscar que fiquem.
+–Técnico anónim0 Trainer</p>
+</li>
+<li>
+<p>A programação é 10% da ciência, 20% talento, e 70% tentando fazer com que a ciência trabalhe com o talento.
+–Anónimo Scientist</p>
+</li>
+<li>
+<p>Todos os programadores são roteiristas e todos os computadores são péssimos atores.
+–Anônimo hack ator</p>
+</li>
+<li>
+<p>Código ruim não é ruim, é apenas mal compreendido.
+–Anónimo código behaviorista</p>
+</li>
+<li>
+<p>É mais fácil medir algo do que entender o que foi medido.
+–Anónimo Analista</p>
+</li>
+<li>
+<p>Quanto mais cedo você ficar para trás em seu trabalho, mais tempo você tem para recuperar o tempo perdido.
+–Anónimo</p>
+</li>
+<li>
+<p>Quando for criada uma linguagem de programação que permita que os programadores escrevam simplesmente em Inglês, será descoberto que programadores não sabem falar Inglês.
+–Anónimo Lingüista</p>
+</li>
+<li>
+<p>Benchmarks não mentem, mas mentirosos fazer benchmarks.
+–Anónimos Tester</p>
+</li>
+<li>
+<p>Porque é que nunca tem tempo para fazê-lo bem, mas sempre temos tempo para fazê-lo denovo?
+–Anónimos código macaco</p>
+</li>
+<li>
+<p>Vida é apenas mais um exemplo de má programação
+–Anônimo metido a Deus</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>O oposto de um design testável é um design detestável.
+–Martin Fowler</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Eu sou um programador, e quero mudar o mundo, mas eles simplesmente não me dão o código fonte.
+–Outro anônimo metido a Deus</p>
+</li>
+<li>
+<p>Cada programa tem pelo menos um bug e pode ser reduzido em pelo menos uma instrução – a partir do qual, por indução, pode-se deduzir que todo o programa pode ser reduzida a uma instrução que não funciona.
+–Desconhecido</p>
+</li>
+<li>
+<p>A única vez em que eu estava errado foi quando eu pensei que estivesse errado.
+–Desconhecido</p>
+</li>
+<li>
+<p>Deus é Real, a não ser que declarado como Integer.
+–Desconhecido</p>
+</li>
+<li>
+<p>A qualidade do código é independente de funcionar ou não.
+Jeff Esposito</p>
+</li>
+<li>
+<p>Barato, rápido e realizável. Escolha apenas dois.
+–Desconhecido</p>
+</li>
+<li>
+<p>Para entender recursividade, você precisa primeir entender recursividade.
+–Desconhecido</p>
+</li>
+<li>
+<p>Remover a função copiar-colar das principais IDEs poderia salvar a humanidade de 90% de todos os bugs em software.
+–Desconhecido</p>
+</li>
+<li>
+<p>Programaçao é como sexo – um erro e você terminará dando suporte a isso pelo resto da sua vida
+–Desconhecido</p>
+</li>
+<li>
+<p>Um programador gasta 50% do seu tempo corrigindo bugs, e os outros 50% criando eles.
+Chris McGrath</p>
+</li>
+<li>
+<p>Deus é um grande programador, mas uma droga de depurador.
+–Desconhecido</p>
+</li>
+<li>
+<p>O software não está terminado até o último usuário estar morto.
+–Desconhecido</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Devo dizer que algumas me pareceram mais legais qndo em inglês. E.. fala sério, o tradutor do Google só me deu traduções completamente sem sentido…
+Retirado e traduzido de <a href="http://www.juixe.com/techknow/index.php/2008/08/17/favorite-programming-quotes/" class="bare">http://www.juixe.com/techknow/index.php/2008/08/17/favorite-programming-quotes/</a></p>
+</div>]]></description><link>https://arthurmolina.github.io/2008/11/22/Frases-de-programadores-Nivel-GEEK-NERD-extremamente-alto.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2008/11/22/Frases-de-programadores-Nivel-GEEK-NERD-extremamente-alto.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Sat, 22 Nov 2008 00:00:00 GMT</pubDate></item><item><title><![CDATA[Meu primeiro site hacked]]></title><description><![CDATA[<div class="paragraph">
 <p>não… não fui eu quem hackeou… se tivesse sido nao teria sido o primeiro. nos meus tempos de 15 anos era uma brincadeira corriqueira hackear sites, principalmente de provedores de acesso. Assim eu tinha várias senhas de internet pra acessar. Bons tempos. Mas neste caso prefiro os de hoje onde temos banda larga.</p>
 </div>
 <div class="paragraph">
