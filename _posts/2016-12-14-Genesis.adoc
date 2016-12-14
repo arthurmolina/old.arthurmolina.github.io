@@ -1,5 +1,9 @@
-= Primeiro post!
+= Genesis
 :hp-tags: Teste
-Fazendo os primeiros testes.
+:hp-image: genesis.jpg
+Aqui é onde tudo começa.
+Here is where all begins.
+
+Começando a usar o Hubpres e migrando os meus posts antigos do Wordpress.
 
 
