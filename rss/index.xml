@@ -1,15 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Artz World]]></title><description><![CDATA[$DO || !$DO : try<br> try: Commando not found.]]></description><link>https://arthurmolina.github.io</link><image><url>https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&amp;h=414.91395793499044&amp;q=40&amp;dpr=2&amp;auto=format&amp;fit=max&amp;crop=faces</url><title>Artz World</title><link>https://arthurmolina.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Wed, 14 Dec 2016 19:21:25 GMT</lastBuildDate><atom:link href="https://arthurmolina.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Genesis]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Artz World]]></title><description><![CDATA[$DO || !$DO : try<br> try: Commando not found.]]></description><link>https://arthurmolina.github.io</link><image><url>https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&amp;h=414.91395793499044&amp;q=40&amp;dpr=2&amp;auto=format&amp;fit=max&amp;crop=faces</url><title>Artz World</title><link>https://arthurmolina.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Wed, 14 Dec 2016 19:25:13 GMT</lastBuildDate><atom:link href="https://arthurmolina.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Genesis]]></title><description><![CDATA[<div class="paragraph">
 <p>Aqui é onde tudo começa.
 Here is where all begins.</p>
 </div>
 <div class="paragraph">
 <p>Começando a usar o Hubpres e migrando os meus posts antigos do Wordpress.</p>
-</div>]]></description><link>https://arthurmolina.github.io/2016/12/14/Genesis.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2016/12/14/Genesis.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Wed, 14 Dec 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[AutoGeoCoder e GMapsTileMerger]]></title><description><![CDATA[<div class="imageblock left">
-<div class="content">
-<img src="http://3.bp.blogspot.com/_wYrNot5Caug/S2XX9ZO2MUI/AAAAAAAAADk/eU10vl3u2ZY/s320/gmapstilemerger.jpg" alt="GmapsTileMerger" width="64" height="64">
-</div>
-</div>
-<div class="paragraph">
+</div>]]></description><link>https://arthurmolina.github.io/2016/12/14/Genesis.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2016/12/14/Genesis.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Wed, 14 Dec 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[AutoGeoCoder e GMapsTileMerger]]></title><description><![CDATA[<div class="paragraph">
 <p><strong>GmapsTileMerger</strong></p>
 </div>
 <div class="paragraph">
@@ -29,11 +24,6 @@ Here is where all begins.</p>
 <p>De qualquer forma, Senhores Google, caso esteja, me avisem, expliquem que eu tiro.</p>
 </div>
 </blockquote>
-</div>
-<div class="imageblock left">
-<div class="content">
-<img src="http://1.bp.blogspot.com/_wYrNot5Caug/S2XaduwboFI/AAAAAAAAADs/ZUrufIUBWrw/s320/autogeocoder.jpg" alt="AutoGeoCoder" width="64" height="64">
-</div>
 </div>
 <div class="paragraph">
 <p><strong>AutoGeoCoder</strong></p>
