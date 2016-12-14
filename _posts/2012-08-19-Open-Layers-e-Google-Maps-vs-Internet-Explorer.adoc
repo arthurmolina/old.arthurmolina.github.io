@@ -1,5 +1,6 @@
 = OpenLayers e Google Maps vs. Internet Explorer
 :published_at: 2012-08-19
+:hp-image: https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/life_world_map.png?itok=a9IYkqam
 :uri-openlayers: http://www.openlayers.org/
 :uri-forumdrupal: http://drupal.org/node/1364304
 :uri-blank: https://arthurmolina.github.io/images/blank.gif
