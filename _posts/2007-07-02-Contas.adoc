@@ -1,4 +1,10 @@
-= Teste
-:hp-tags: Teste
+= Contas...
+:hp-tags: Coding, Life,
+:hp-image: http://3.bp.blogspot.com/_wYrNot5Caug/Rq4FXepBy3I/AAAAAAAAAA0/sHVyCSlbW5I/s400/hugo-counter.gif
+:published_at: 2007-07-02
 
-Testando
+Bem.. Novamente, iniciando um blog…Perdi a conta de quantos blogs inicio e enterro. Vamos ver este.
+
+Cheguei a fazer um blog todo na mão uma vez. Só que era em ASP e hoje em dia eu tenho verdadeiro horror a ASP. E mesmo que quisesse usar não tenho servidor que preste pra hospedar.
+
+Sendo assim.. De volta ao blogger…
