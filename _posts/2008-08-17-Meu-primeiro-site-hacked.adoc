@@ -1,0 +1,14 @@
+= Meu primeiro site hacked
+:published_at: 2008-08-17
+:hp-tags: coding
+
+não… não fui eu quem hackeou… se tivesse sido nao teria sido o primeiro. nos meus tempos de 15 anos era uma brincadeira corriqueira hackear sites, principalmente de provedores de acesso. Assim eu tinha várias senhas de internet pra acessar. Bons tempos. Mas neste caso prefiro os de hoje onde temos banda larga.
+
+Eis que acontece um fato inusitado. Virou a mesa. Agora foi um site meu que foi hackeado. Pra ser mais exato defaced, ou seja, o minino alterou a pagina principal pra dizer que hackeou. Coisa mesmo de minino. Quando vi o site pensei. Meu deusu! To fudido. O backup de tudo no servidor ta super desatualizado. Me fudi! Quem manda não criar rotina de backup frequente? :P Pelo menos pra isso serviu a lição.
+
+O que aconteceu de fato foi um bug do Joomla que foi descoberto há uns dois dias atrás e esse grupinho ta fazendo a festa com todos os servidores que usam joomla. Em outras palavras, não tiverão acesso a porra nenhuma. Agora estou atualizando o servidor pra versão stable 1.5.6…. Só espero que não aconteça caquinhas nesta atualização…
+
+Edit:
+Bem… Ainda fiquei meio cabreiro com medo do hacker ter deixado alguma backdoor. Mas não.. Necas… Foi scriptkiddie mesmo… Vasculhei tudo e nada.
+
+Bem.. É isso… Registrando. No mais, estou em vias de decretar este blog fechado.
