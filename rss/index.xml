@@ -1,19 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Artz World]]></title><description><![CDATA[$DO || !$DO : try<br> try: Commando not found.]]></description><link>https://arthurmolina.github.io</link><image><url>https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&amp;h=414.91395793499044&amp;q=40&amp;dpr=2&amp;auto=format&amp;fit=max&amp;crop=faces</url><title>Artz World</title><link>https://arthurmolina.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Wed, 14 Dec 2016 19:59:13 GMT</lastBuildDate><atom:link href="https://arthurmolina.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Um mundo holográfico]]></title><description><![CDATA[<div class="paragraph">
-<p>Um sonho&#8230;&#8203; Imagine desenhar desse jeito&#8230;&#8203;</p>
-</div>
-<div class="videoblock">
-<div class="content">
-<iframe src="https://player.vimeo.com/video/1416530" frameborder="0" allowfullscreen></iframe>
-</div>
-</div>
-<div class="paragraph">
-<p><a href="http://vimeo.com/1416530">Holographic Interface - round interface - Ringo</a> from <a href="http://vimeo.com/user488156">Ivan Tihienko</a> on Vimeo.</p>
-</div>
-<div class="videoblock">
-<div class="content">
-<iframe src="https://www.youtube.com/embed/VzFpg271sm8?rel=0" frameborder="0" allowfullscreen></iframe>
-</div>
-</div>]]></description><link>https://arthurmolina.github.io/2016/12/14/Um-mundo-holografico.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2016/12/14/Um-mundo-holografico.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Wed, 14 Dec 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Scripts PHP]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Artz World]]></title><description><![CDATA[$DO || !$DO : try<br> try: Commando not found.]]></description><link>https://arthurmolina.github.io</link><image><url>https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&amp;h=414.91395793499044&amp;q=40&amp;dpr=2&amp;auto=format&amp;fit=max&amp;crop=faces</url><title>Artz World</title><link>https://arthurmolina.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Wed, 14 Dec 2016 20:00:00 GMT</lastBuildDate><atom:link href="https://arthurmolina.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Scripts PHP]]></title><description><![CDATA[<div class="paragraph">
 <p>Só passei pra deixar a info que fiz alguns scripts em PHP e disponibilizei no site www.phpbrasil.com. São eles:</p>
 </div>
 <div class="paragraph">
@@ -35,7 +20,22 @@ Here is where all begins.</p>
 </div>
 <div class="paragraph">
 <p>Começando a usar o Hubpres e migrando os meus posts antigos do Wordpress.</p>
-</div>]]></description><link>https://arthurmolina.github.io/2016/12/14/Genesis.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2016/12/14/Genesis.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Wed, 14 Dec 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Eu no Google Street View]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>https://arthurmolina.github.io/2016/12/14/Genesis.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2016/12/14/Genesis.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Wed, 14 Dec 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Um mundo holográfico]]></title><description><![CDATA[<div class="paragraph">
+<p>Um sonho&#8230;&#8203; Imagine desenhar desse jeito&#8230;&#8203;</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe src="https://player.vimeo.com/video/1416530" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="http://vimeo.com/1416530">Holographic Interface - round interface - Ringo</a> from <a href="http://vimeo.com/user488156">Ivan Tihienko</a> on Vimeo.</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe src="https://www.youtube.com/embed/VzFpg271sm8?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>]]></description><link>https://arthurmolina.github.io/2011/01/25/Um-mundo-holografico.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2011/01/25/Um-mundo-holografico.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Tue, 25 Jan 2011 00:00:00 GMT</pubDate></item><item><title><![CDATA[Eu no Google Street View]]></title><description><![CDATA[<div class="paragraph">
 <p>Faz algum tempo que lembrei que teve uma vez que um carro do Google Street View tinha passado por mim, mas nunca procurei até hoje. Eu estava indo na casa do meu orientador de mestrado deixar uma parte do que eu havia escrito quando vi o estranho carro. E aqui estou:</p>
 </div>
 <iframe src="http://maps.google.com.br/maps?f=q&amp;source=embed&amp;hl=pt-BR&amp;geocode=&amp;aq=&amp;sll=-22.972253,-43.216792&amp;sspn=0.00403,0.010096&amp;ie=UTF8&amp;hnear=&amp;t=h&amp;layer=c&amp;cbll=-22.983074,-43.215584&amp;panoid=f39ddP74WbDQh2e_3HhRqA&amp;cbp=13,352.73,,2,9.67&amp;ll=-22.976987,-43.217412&amp;spn=0.012406,0.024118&amp;z=15&amp;output=svembed" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="425" height="240"></iframe>
