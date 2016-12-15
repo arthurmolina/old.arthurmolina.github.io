@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Artz World]]></title><description><![CDATA[$DO || !$DO : try<br> try: Commando not found.]]></description><link>https://arthurmolina.github.io</link><image><url>https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&amp;h=414.91395793499044&amp;q=40&amp;dpr=2&amp;auto=format&amp;fit=max&amp;crop=faces</url><title>Artz World</title><link>https://arthurmolina.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Thu, 15 Dec 2016 14:15:40 GMT</lastBuildDate><atom:link href="https://arthurmolina.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Genesis]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Artz World]]></title><description><![CDATA[$DO || !$DO : try<br> try: Commando not found.]]></description><link>https://arthurmolina.github.io</link><image><url>https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&amp;h=414.91395793499044&amp;q=40&amp;dpr=2&amp;auto=format&amp;fit=max&amp;crop=faces</url><title>Artz World</title><link>https://arthurmolina.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Thu, 15 Dec 2016 14:17:37 GMT</lastBuildDate><atom:link href="https://arthurmolina.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Genesis]]></title><description><![CDATA[<div class="paragraph">
 <p>Aqui é onde tudo começa.
 Here is where all begins.</p>
 </div>
@@ -304,10 +304,8 @@ select * from master_search_full('string', 'catalogo', 'schema');</code></pre>
 <div class="paragraph">
 <p>Eu escrevi há <a href="http://www.codinghorror.com/blog/2007/05/giving-up-on-microsoft.html">cinco anos atrás</a>:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>Eu sou pragmático. No momento, eu escolho viver no universo Microsoft. Mas isso não significa que sou ignorante de como os outros vivem. Sempre há mais de um jeito de fazer, e só porque eu escolhi uma em particular não quer dizer que seja a certa – nem mesmo uma maneira particularmente boa. Escolher ser provincial e insular é um caminho infalível para a ignorância. aprenda como os outros vivem. Tente conhecer alguns desenvolvedores que não vivem exatamente no mesmo mundo que você. Procure as ferramentas que estão usando, e porque. Se depois de molhar o seu pé nos dois lados da cerca, você decidir que o outro lado está vivendo melhor e deseja se juntar a eles, então te desejo um amoroso adeus.</pre>
-</div>
+<div class="paragraph">
+<p>"Eu sou pragmático. No momento, eu escolho viver no universo Microsoft. Mas isso não significa que sou ignorante de como os outros vivem. Sempre há mais de um jeito de fazer, e só porque eu escolhi uma em particular não quer dizer que seja a certa – nem mesmo uma maneira particularmente boa. Escolher ser provincial e insular é um caminho infalível para a ignorância. aprenda como os outros vivem. Tente conhecer alguns desenvolvedores que não vivem exatamente no mesmo mundo que você. Procure as ferramentas que estão usando, e porque. Se depois de molhar o seu pé nos dois lados da cerca, você decidir que o outro lado está vivendo melhor e deseja se juntar a eles, então te desejo um amoroso adeus."</p>
 </div>
 <div class="paragraph">
 <p>Eu não vivo mais no universo Microsoft. Certo, errado, bom, mau, é assim que ele saiu para o projeto que queríamos construir.</p>
@@ -326,20 +324,14 @@ select * from master_search_full('string', 'catalogo', 'schema');</code></pre>
 <div class="paragraph">
 <p>Eu sempre fui um pouco intrigado com o Ruby, principalmente por causa do <a href="https://sites.google.com/site/steveyegge2/tour-de-babel">absolutamente transbordante louvor que Steve Yegge fez com a linguagem muito tempo atrás em 2006</a>. Eu nunca esqueci disso.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>Na maior parte, Ruby pegou o processamento de string e integração com o Unix do Perl, o que significa que a sintaxe é idêntica, e assim por ali mesmo, antes de qualquer coisa acontecer, você já tem o melhor de Perl. E isso é um grande começo, especialmente se você não pega o resto do Perl.</pre>
+<div class="paragraph">
+<p>"Na maior parte, Ruby pegou o processamento de string e integração com o Unix do Perl, o que significa que a sintaxe é idêntica, e assim por ali mesmo, antes de qualquer coisa acontecer, você já tem o melhor de Perl. E isso é um grande começo, especialmente se você não pega o resto do Perl.</p>
 </div>
+<div class="paragraph">
+<p>Mas então Matz pegou o melhor de processamento de listas do Lisp, o melhor de Orientação a Objetos do Smalltalk e outras linguagens, e o melhor de iterators do CLU, e basicamente o melhor de tudo de todos.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>Mas então Matz pegou o melhor de processamento de listas do Lisp, o melhor de Orientação a Objetos do Smalltalk e outras linguagens, e o melhor de iterators do CLU, e basicamente o melhor de tudo de todos.</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>E ele de alguma forma fez com que tudo funcionasse junto tão bem que você nem percebe que é tudo isso. Eu aprendi Ruby mais rápido do que qualquer outra linguagem, de umas 30 ou 40 no total: levou uns 3 dias para que eu me sentisse muito mais confortável usando Ruby, do que em Perl, depois de oito anos de codificação em Perl. Ele é tão consistente que você começa a ser capaz de adivinhar como as coisas vão funcionar, e na maioria das vezes você está certo. É lindo. E divertido. E prático.</pre>
-</div>
+<div class="paragraph">
+<p>E ele de alguma forma fez com que tudo funcionasse junto tão bem que você nem percebe que é tudo isso. Eu aprendi Ruby mais rápido do que qualquer outra linguagem, de umas 30 ou 40 no total: levou uns 3 dias para que eu me sentisse muito mais confortável usando Ruby, do que em Perl, depois de oito anos de codificação em Perl. Ele é tão consistente que você começa a ser capaz de adivinhar como as coisas vão funcionar, e na maioria das vezes você está certo. É lindo. E divertido. E prático."</p>
 </div>
 <div class="paragraph">
 <p>Steve é um desses programadores poliglotas que eu <a href="http://www.codinghorror.com/blog/2012/07/but-you-did-not-persuade-me.html">respeito tanto</a> que eu basicamente só tomo seja qual for a sua opinião, desde que não se trate de algo maluco como o controle de armas ou feminismo ou T’Pau, e aceito como fato.</p>
