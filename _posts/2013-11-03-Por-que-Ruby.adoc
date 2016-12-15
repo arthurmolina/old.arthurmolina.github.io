@@ -59,7 +59,7 @@ Então como resultado, para qualquer tarefa em .Net você deve ter – se tiver 
 
 Eu escrevi há {uri-5anos}[cinco anos atrás]:
 
-    Eu sou pragmático. No momento, eu escolho viver no universo Microsoft. Mas isso não significa que sou ignorante de como os outros vivem. Sempre há mais de um jeito de fazer, e só porque eu escolhi uma em particular não quer dizer que seja a certa – nem mesmo uma maneira particularmente boa. Escolher ser provincial e insular é um caminho infalível para a ignorância. aprenda como os outros vivem. Tente conhecer alguns desenvolvedores que não vivem exatamente no mesmo mundo que você. Procure as ferramentas que estão usando, e porque. Se depois de molhar o seu pé nos dois lados da cerca, você decidir que o outro lado está vivendo melhor e deseja se juntar a eles, então te desejo um amoroso adeus.
+"Eu sou pragmático. No momento, eu escolho viver no universo Microsoft. Mas isso não significa que sou ignorante de como os outros vivem. Sempre há mais de um jeito de fazer, e só porque eu escolhi uma em particular não quer dizer que seja a certa – nem mesmo uma maneira particularmente boa. Escolher ser provincial e insular é um caminho infalível para a ignorância. aprenda como os outros vivem. Tente conhecer alguns desenvolvedores que não vivem exatamente no mesmo mundo que você. Procure as ferramentas que estão usando, e porque. Se depois de molhar o seu pé nos dois lados da cerca, você decidir que o outro lado está vivendo melhor e deseja se juntar a eles, então te desejo um amoroso adeus."
 
 Eu não vivo mais no universo Microsoft. Certo, errado, bom, mau, é assim que ele saiu para o projeto que queríamos construir.
 
@@ -71,11 +71,11 @@ Mas **por que Ruby?** Bem, a menor resposta e não muito glamorosa é a de que e
 
 Eu sempre fui um pouco intrigado com o Ruby, principalmente por causa do {uri-yegge}[absolutamente transbordante louvor que Steve Yegge fez com a linguagem muito tempo atrás em 2006]. Eu nunca esqueci disso.
 
-    Na maior parte, Ruby pegou o processamento de string e integração com o Unix do Perl, o que significa que a sintaxe é idêntica, e assim por ali mesmo, antes de qualquer coisa acontecer, você já tem o melhor de Perl. E isso é um grande começo, especialmente se você não pega o resto do Perl.
+"Na maior parte, Ruby pegou o processamento de string e integração com o Unix do Perl, o que significa que a sintaxe é idêntica, e assim por ali mesmo, antes de qualquer coisa acontecer, você já tem o melhor de Perl. E isso é um grande começo, especialmente se você não pega o resto do Perl.
 
-    Mas então Matz pegou o melhor de processamento de listas do Lisp, o melhor de Orientação a Objetos do Smalltalk e outras linguagens, e o melhor de iterators do CLU, e basicamente o melhor de tudo de todos.
+Mas então Matz pegou o melhor de processamento de listas do Lisp, o melhor de Orientação a Objetos do Smalltalk e outras linguagens, e o melhor de iterators do CLU, e basicamente o melhor de tudo de todos.
 
-    E ele de alguma forma fez com que tudo funcionasse junto tão bem que você nem percebe que é tudo isso. Eu aprendi Ruby mais rápido do que qualquer outra linguagem, de umas 30 ou 40 no total: levou uns 3 dias para que eu me sentisse muito mais confortável usando Ruby, do que em Perl, depois de oito anos de codificação em Perl. Ele é tão consistente que você começa a ser capaz de adivinhar como as coisas vão funcionar, e na maioria das vezes você está certo. É lindo. E divertido. E prático.
+E ele de alguma forma fez com que tudo funcionasse junto tão bem que você nem percebe que é tudo isso. Eu aprendi Ruby mais rápido do que qualquer outra linguagem, de umas 30 ou 40 no total: levou uns 3 dias para que eu me sentisse muito mais confortável usando Ruby, do que em Perl, depois de oito anos de codificação em Perl. Ele é tão consistente que você começa a ser capaz de adivinhar como as coisas vão funcionar, e na maioria das vezes você está certo. É lindo. E divertido. E prático."
 
 Steve é um desses programadores poliglotas que eu {uri-respeito}[respeito tanto] que eu basicamente só tomo seja qual for a sua opinião, desde que não se trate de algo maluco como o controle de armas ou feminismo ou T’Pau, e aceito como fato.
 
