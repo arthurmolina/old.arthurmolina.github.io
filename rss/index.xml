@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Artz World]]></title><description><![CDATA[$DO || !$DO : try<br> try: Commando not found.]]></description><link>https://arthurmolina.github.io</link><image><url>https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&amp;h=414.91395793499044&amp;q=40&amp;dpr=2&amp;auto=format&amp;fit=max&amp;crop=faces</url><title>Artz World</title><link>https://arthurmolina.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Thu, 15 Dec 2016 13:04:22 GMT</lastBuildDate><atom:link href="https://arthurmolina.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Genesis]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Artz World]]></title><description><![CDATA[$DO || !$DO : try<br> try: Commando not found.]]></description><link>https://arthurmolina.github.io</link><image><url>https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&amp;h=414.91395793499044&amp;q=40&amp;dpr=2&amp;auto=format&amp;fit=max&amp;crop=faces</url><title>Artz World</title><link>https://arthurmolina.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Thu, 15 Dec 2016 13:14:18 GMT</lastBuildDate><atom:link href="https://arthurmolina.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Genesis]]></title><description><![CDATA[<div class="paragraph">
 <p>Aqui é onde tudo começa.
 Here is where all begins.</p>
 </div>
@@ -162,7 +162,117 @@ fwrite($f, $sql_dic . "\n\n" . $sql_banco . "\n\n" . $sql_populate);
 </div>
 <div class="paragraph">
 <p>Esteja certo de que o procedimento não é tão simples quanto isso. Mas é pelo menos uma pequena ajuda.</p>
-</div>]]></description><link>https://arthurmolina.github.io/2012/12/04/Jogando-o-Censo-2010-no-PostgreSQL.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2012/12/04/Jogando-o-Censo-2010-no-PostgreSQL.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Tue, 04 Dec 2012 00:00:00 GMT</pubDate></item><item><title><![CDATA[OpenLayers e Google Maps vs. Internet Explorer]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>https://arthurmolina.github.io/2012/12/04/Jogando-o-Censo-2010-no-PostgreSQL.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2012/12/04/Jogando-o-Censo-2010-no-PostgreSQL.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Tue, 04 Dec 2012 00:00:00 GMT</pubDate></item><item><title><![CDATA[Joystick Mouse com Teensy]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Tenho feito algumas brincadeiras com computação física e aceitei o meu primeiro projeto de um dispositivo usando microprocessador. Enquanto o componente que preciso pra terminar esse projeto não chega (fiz o pedido pelo MercadoLivre) decidi brincar com outros componentes. Como eu estou fazendo um dispositivo que vai simular alguns comandos de teclado, decidi usar o <a href="http://www.pjrc.com/teensy/">Teensy 2.0</a> que possibilita uma programação de <a href="http://en.wikipedia.org/wiki/Human_interface_device">HID</a> de modo bem fácil. É incrível como é fácil fazer isso com o Teensy.</p>
+</div>
+<div class="paragraph">
+<p>Aproveitei um <a href="http://dx.com/p/repair-parts-replacement-analog-stick-module-for-ps2-controller-black-121340">módulo de joystick</a> que já tinha e adaptei o controle do mouse.</p>
+</div>
+<div class="paragraph">
+<p>Então aqui vai a receita:
+Ingredientes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Teensy 2.0</p>
+</li>
+<li>
+<p>Módulo Joystick KY-023</p>
+</li>
+<li>
+<p>alguns fios</p>
+</li>
+<li>
+<p>Adaptador USB</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_programa_o">Programação</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C" data-lang="C">int joyPin1 = PIN_F0;
+int joyPin2 = PIN_F1;
+int v1 = 0;
+int v2 = 0;
+int v1Padrao = 0;
+int v2Padrao = 0;
+int passo = 20;
+
+void setup() {
+  Serial.begin(9600);
+  v1Padrao = analogRead(joyPin1);
+  delay(100);
+  v2Padrao = analogRead(joyPin2);
+}
+
+int change(int v, int unchange, int max_state) {
+  if(v &gt; unchange) {
+    return int(passo * ( v – unchange ) / (max_state – unchange));
+  } else if (v &lt; unchange) {
+    return int( (v / unchange * passo) – passo );
+  }
+  return 0;
+}
+
+void loop() {
+  v1 = analogRead(joyPin1);
+  delay(100);
+  v2 = analogRead(joyPin2);
+  Serial.println(“—-“);
+  Serial.print(v1);
+  Serial.print(” – “);
+  Serial.println(change(v1, v1Padrao, 1023));
+  Serial.print(v2);
+  Serial.print(” – “);
+  Serial.println(change(v2, v2Padrao, 997) );
+  Mouse.move( change(v1, 506, 1023) , change(v2, 512, 997) );
+  delay(100);
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_o_esquema_do_fritzing">O Esquema do Fritzing</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="https://arthurmolina.github.io/images/MouseX.png" alt="MouseX.png">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_alguma_explica_es">Alguma explicações</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>O Joystick nada mais é do que dois potenciômetros e ainda um botão (para o caso de você pressionar o joystick pra baixo). O terminal VRx e VRy estão ligados à portas analógicas do Teensy enquanto o terminal SW que é o do botão está conectado a uma porta digital (apesar de não estar sendo usado). As portas analógicas vão do valor Zero a 1023. Só que a partir de alguns testes eu descobri que em um eixo os valores vão de zero a 1023 parando em 506 quando está centralizado e o outro eixo vai de zero a 997 parando em 512. Certamente outras peças terão limites diferentes. A função change faz o serviço de adaptar o valor retornado pelos potenciômetros para o número mais interessante para a função do mouse que deverá ir de -127 a 127.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_problemas">Problemas</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Eu tentei fazer funcionar o botão que vem com ele como clique do mouse, contudo eu não sei por qual motivo as vezes o valor é zero e outras é 1 sem nem mexer no joystick. Outra questão é que não é sempre que ele move pro sentido correto. Não entendi o motivo. Se alguem souber, me explique.</p>
+</div>
+<div class="paragraph">
+<p>Aqui está o resultado:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://arthurmolina.github.io/images/MouseX2.png" alt="MouseX2.png">
+</div>
+</div>
+</div>
+</div>]]></description><link>https://arthurmolina.github.io/2012/11/17/Joystick-Mouse-com-Teensy.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2012/11/17/Joystick-Mouse-com-Teensy.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Sat, 17 Nov 2012 00:00:00 GMT</pubDate></item><item><title><![CDATA[OpenLayers e Google Maps vs. Internet Explorer]]></title><description><![CDATA[<div class="paragraph">
 <p>Estava eu desenvolvendo o meu site com mapas utilizando o <a href="http://www.openlayers.org/">OpenLayers</a> como framework e, obviamente, testando e melhorando tudo no Firefox. A razão é muito simples: Firebug. Esta ferramenta melhora em muito a vida de um desenvolvedor front-end! Acho que depois ainda vou fazer uma avaliação dos debuggers de browsers. Mas isto fica para um outro post.</p>
 </div>
 <div class="paragraph">
