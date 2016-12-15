@@ -1,5 +1,6 @@
 = E quando preciso encontrar uma string específica dentro de um banco mas não sei em qual tabela nem coluna?
 :published_at: 2014-11-05
+:hp-image: http://c8.quickcachr.fotos.sapo.pt/i/B9414e16a/15723854_ZjezI.jpeg
 
 Hoje tive uma necessidade que vivo tendo e sempre usei outro modo de resolver. Nunca tinha mexido nesse banco antes, mas chegaram pra mim pedindo pra alterar o número do contrato para digamos ‘666/2014′ onde antes era ‘333/2012′. Como fazer? Normalmente eu faço um dump do banco e faço uma busca do texto em modo texto mesmo (usando um editor ou o comando grep). Mas conversando com meu amigo DBA ( valeu Adolfho Lopes! ) decidimos fazer de outro modo.
 
