@@ -1,5 +1,6 @@
 = Jogando o Censo 2010 no PostgreSQL
 :published_at: 2012-12-04
+:uri-tabelaxls: https://arthurmolina.github.io/download/DadosCenso2010.xls
 
 Existem várias razões para querer guardar os dados do Censo Universo de 2010 do IBGE no banco de dados Postgres. Uma que é mais óbvia é poder gerar querys optimizadas dos dados que quiser trabalhar. Além disso o SPSS e o ArcGIS tem opção de abrir uma query do Postgres e muitos outros sistemas também tem. Este procedimento todo deveria ser muito simples, mas a quantidade de erros nos arquivos baixados do IBGE é tão grande que esse processo me tomou um tempo absurdo e sem motivo.
 
@@ -7,7 +8,7 @@ Então vamos lá. Primeira coisa a fazer é baixar todos os dados do FTP do IBGE
 
 Mas o problema não está no download. Primeiro, o IBGE disponibiliza os arquivos em dois formatos: XLS e CSV. O problema é que a conversão do XLS para CSV deles não saiu correta. Alguns CSV vieram com a coluna do código do setor em formato de notação científica, além disso devem ter se confundindo no arquivo do Espirito Santo que não colocaram um dos CSV e substituiram por um XLS… Ou seja, não podemos contar com os arquivos CSV salvos pelo IBGE. Outro erro que encontrei depois na hora de jogar os dados dentro das tabelas foi que os arquivos não estão padronizados!!! Por exemplo, os arquivos de Entorno para os estados do Ceará, Distrito Federal, Minas Gerais, Pernambuco e Rio Grande do Sul estão com menos colunas que os outros. Voltaremos a isso mais abaixo.
 
-Outra questão a se pensar é no dicionário das variáveis. Cada estado tem 26 tabelas. E o dicionário de cada tabela está num arquivo PDF dentro de cada ZIP chamado BASE DE INFORMAÇÕES POR SETOR CENSITÁRIO Censo 2010 – Universo.pdf. Um formato nada interessante pois fica muito dificil de tirar os dados de modo automatizado. A solução que encontrei foi converter o PDF em DOC usando este site. E depois tive um trabalho braçal de converter cada um em uma tabela XLS. Coloquei o arquivo disponível para quem não quiser ter o trabalho que tive.
+Outra questão a se pensar é no dicionário das variáveis. Cada estado tem 26 tabelas. E o dicionário de cada tabela está num arquivo PDF dentro de cada ZIP chamado BASE DE INFORMAÇÕES POR SETOR CENSITÁRIO Censo 2010 – Universo.pdf. Um formato nada interessante pois fica muito dificil de tirar os dados de modo automatizado. A solução que encontrei foi converter o PDF em DOC usando este site. E depois tive um trabalho braçal de converter cada um em uma {uri-tabelaxls}[tabela XLS]. Coloquei o arquivo disponível para quem não quiser ter o trabalho que tive.
 
 Voltando novamente aos dados. Quem usa Linux sai em vantagem pois ele possui vários comandos que possibilitam executar uma conversão em lote. Abaixo um script shell para rodar e transformar os ZIPs que você baixou do site em um arquivo único para cada uma das 26 tabelas. Antes de rodar esse script é importante que alguns programas estejam instalados. Para isso basta rodar:
 
