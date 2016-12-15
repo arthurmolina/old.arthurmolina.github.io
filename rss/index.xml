@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Artz World]]></title><description><![CDATA[$DO || !$DO : try<br> try: Commando not found.]]></description><link>https://arthurmolina.github.io</link><image><url>https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&amp;h=414.91395793499044&amp;q=40&amp;dpr=2&amp;auto=format&amp;fit=max&amp;crop=faces</url><title>Artz World</title><link>https://arthurmolina.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Thu, 15 Dec 2016 13:54:34 GMT</lastBuildDate><atom:link href="https://arthurmolina.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Genesis]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Artz World]]></title><description><![CDATA[$DO || !$DO : try<br> try: Commando not found.]]></description><link>https://arthurmolina.github.io</link><image><url>https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&amp;h=414.91395793499044&amp;q=40&amp;dpr=2&amp;auto=format&amp;fit=max&amp;crop=faces</url><title>Artz World</title><link>https://arthurmolina.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Thu, 15 Dec 2016 14:13:01 GMT</lastBuildDate><atom:link href="https://arthurmolina.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Genesis]]></title><description><![CDATA[<div class="paragraph">
 <p>Aqui é onde tudo começa.
 Here is where all begins.</p>
 </div>
@@ -243,7 +243,130 @@ select * from master_search_full('string', 'catalogo', 'schema');</code></pre>
 </div>
 <div class="paragraph">
 <p>Voltando ao nosso assunto anterior: nomes de domínio na Internet. Seria muito bom se houvesse uma intervenção maior por parte dos órgãos para evitar esse tipo de coisa. Uma quantidade absurda de nomes de domínio sem “função social”. Defendo que os órgãos responsáveis por gerenciar os nomes de domínio de cada país insiram uma espécie de IPTU progressivo: A pessoa registra um .com a US$10,00. Se ela não deu função ao seu domínio em um ano, o pagamento do registro no ano seguinte já seria US$20,00. No subsequente seria US$40,00 e assim em diante. Se o domínio só tivesse uma tela com anúncios e links relacionados ele não atenderia à função social e entraria no IPV (Imposto sobre Propriedade Virtual) Progressivo.</p>
-</div>]]></description><link>https://arthurmolina.github.io/2014/08/17/Funcao-Social-for-Dummies-ou-Registraram-um-dominio-e-nao-usam-E-agora.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2014/08/17/Funcao-Social-for-Dummies-ou-Registraram-um-dominio-e-nao-usam-E-agora.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Sun, 17 Aug 2014 00:00:00 GMT</pubDate></item><item><title><![CDATA[Alguém com senso de humor: Bill Gates]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>https://arthurmolina.github.io/2014/08/17/Funcao-Social-for-Dummies-ou-Registraram-um-dominio-e-nao-usam-E-agora.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2014/08/17/Funcao-Social-for-Dummies-ou-Registraram-um-dominio-e-nao-usam-E-agora.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Sun, 17 Aug 2014 00:00:00 GMT</pubDate></item><item><title><![CDATA[Por que Ruby?]]></title><description><![CDATA[<div class="paragraph">
+<p>Esta é a primeira vez que estou traduzindo um artigo do Atwood e pretendo fazer isso mais vezes. Por favor, se houver algum erro de concordância e entendimento com relação o <a href="http://www.codinghorror.com/blog/2013/03/why-ruby.html">original</a>, sintam-se a vontade para me escrever.</p>
+</div>
+<div class="paragraph">
+<p>—</p>
+</div>
+<div class="paragraph">
+<p>Tenho sido desenvolvedor Microsoft por algumas décadas até hoje. Eu dei meus primeiros passos em vários sabores do <a href="http://www.codinghorror.com/blog/2008/04/everything-i-needed-to-know-about-programming-i-learned-from-basic.html">Microsoft Basic para PC</a>, e recebi meu primeiro pagamento programando em Microsoft FoxPro, Microsoft Access, e Microsoft Visual Basic.Eu vi o futuro da programação, meus amigos, e ele é terriveis aplicações de CRUD rodando em maquinas <a href="http://pt.wikipedia.org/wiki/Wintel">Wintel</a>!</p>
+</div>
+<div class="paragraph">
+<p>É claro, construimos o Stack Overflow em Microsoft.NET. Este é o grande motivo de ele ainda ser tão rápido quanto é. Então uma das perguntas mais frequentemente feitas depois que anunciamos o <a href="http://www.codinghorror.com/blog/2013/02/civilized-discourse-construction-kit.html">Discourse</a> foi:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Por que vocês não desenvolveram o Discourse em .NET também?</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Deixemos claro uma coisa: Eu amo .NET. Uma das grandes emoções da minha carreira profissional foi ter a oportunidade de colocar um adesivo do Coding Horror nas mãos de <a href="http://en.wikipedia.org/wiki/Anders_Hejlsberg">Anders Hejlsberg</a>. Perdoe meu fanboy interior por um momento, mas caramba, eu ainda me arrepio. Devem ter talvez uns cinquenta projetistas de linguagem de classes de computador pelo mundo. Anders é apenas um deles que criou o Turbo Pascal e o Delphi. É graças à experiência de Anders que o .NET começou com uma linguagem tão bem projetada – literalmente o que o Java deveria ter sido em todo o nível concebível – e tem evoluído extraordinariamente de modo continuo em meios práticos pelos últimos 10 anos, aproveitando os pontos fortes de outras linguagens dinamicamente influentes.
+turbopascal</p>
+</div>
+<div class="paragraph">
+<p>Dito tudo isso, é verdade que eu intencionalmente escolhi não usar .NET para o meu próximo projeto. Então você pode esperar encontrar alguém bravo arengando aqui sobre o quão mais feliz estou deixando as amarras opressoras dos meus senhores Microsoft para trás. Livre afinal, livre, pelo menos, graças a Deus todo-poderoso eu sou livre enfim!</p>
+</div>
+<div class="paragraph">
+<p>Sinto muito. <a href="http://www.codinghorror.com/blog/2007/05/giving-up-on-microsoft.html">Já escrevi este post cinco anos atrás</a>.</p>
+</div>
+<div class="paragraph">
+<p>Como qualquer programador pragmático, eu escolhi a ferramenta apropriada para o trabalho em mãos. E por mais que eu ame o .NET, ele <strong>seria uma escolha extraordinariamente pobre para um projeto 100% software livre como o Discourse</strong>. Por que? Três razões em especial:</p>
+</div>
+<div class="paragraph">
+<p>1 <strong>O licenciamento.</strong> Meu Deus, o licenciamento. Nem é tanto pelo dinheiro, como é infernal o alucinante nível de complexidade em ter certeza de que todo o seu software é licenciado apropriadamente: determinando em qual nível e edição você está licenciado, quem é licenciado para usar o que, qual servidores são licenciados… Han? Que? Desculpa, passei lá por um minuto, quando fui atacado por <a href="http://www.codinghorror.com/blog/2009/07/oh-you-wanted-awesome-edition.html">doninhas raivosas do licenciamento</a>.</p>
+</div>
+<div class="paragraph">
+<p>Eu não estou inclinado a fazer grandes declarações sobre o futuro do software, mas se há algo que vai mata o software comercial, deixe-me dizer-lhe, não será um software de código aberto.</p>
+</div>
+<div class="paragraph">
+<p>2 <strong>O atrito.</strong> Se você quer construir um software open source verdadeiramente viável, você precisa de pessoas para contribuir com o seu projeto, de modo que se trate de uma coisa vivente, respirando e crescendo. E a não ser que você possa baixar todo o software que precisa para hackear o seu projeto de forma livre por toda a Internet, sem amarras, haverá atrito demais.</p>
+</div>
+<div class="paragraph">
+<p>Se Stack Overflow me ensinou algo, é que hoje nós vivemos num mundo onde o próximo engenheiro de software brilhante pode vir de qualquer lugar do planeta. Estou falando de lugares que esse <a href="http://www.codinghorror.com/blog/2009/03/the-ugly-american-programmer.html">programador americano e feio</a> nunca escutou falar, onde se fala línguas doidas e sem sentido que eu não entendo. Mas entenda. Afaste-se um pouco enquanto eu explodo seus cérebros, gente: esses programadores brilhantes ainda desenvolvem usando as mesmas palavras-chave que nós! Eu sei, louco né?</p>
+</div>
+<div class="paragraph">
+<p>Levantar e rodar em um ambiente Microsoft é simplesmente muito difícil para um desenvolvedor, digamos, na Argentina, ou no Nepal, ou na Bulgária. Cadeias de sistemas Operacionais, linguagens e ferramentas livres são os grandes equalizadores, a base para a nova grande geração de programadores por todo o mundo onde estão em vias de nos ajudar a mudar o mundo.</p>
+</div>
+<div class="paragraph">
+<p>3 <strong>O Ecosistema.</strong> Quando eu estava no Stack Exchange, <a href="http://blog.stackoverflow.com/2012/02/stack-exchange-open-source-projects/">nós brigamos</a> para fazer o máximo que podiamos para que a nossa infraestrutura fosse open source. Foi algo que deixamos explícito nas nossas orientações de compensação, essa ideia de que nós seriamos (parcialmente) julgados pelo quanto poderíamos fazer em público, e tentar deixar o quanto de artefatos públicos e úteis do nosso trabalho quanto podíamos. Mas por que todo o Stack Exchange não foi criado sob <a href="http://blog.stackoverflow.com/2009/06/stack-overflow-creative-commons-data-dump/">Creative Commons contributions</a> desde o primeiro dia?</p>
+</div>
+<div class="paragraph">
+<p>Você pode certamente desenvolver software código aberto em .Net. E muitos o fazem. Mas isto nunca parece natural. Isto nunca parece correto. Ninguém aceita uma correção para uma biblioteca de classe do core do .Net, não importa o quanto você tente. parece que você está nadando contra a corrente, em um mundo de pequenas e grandes empresas usando .Net onde elas não estão de fato interessadas em compartilhar o códigos com o mundo – provavelmente porque eles sabem que seriam ruim se o fizessem de qualquer forma. É que não faz parte da cultura do Microsoft .Net fazer coisas open source, especialmente coisas ruins. Se você tem medo de que as coisas que você compartilha sejam ruins, este medo vai te tornar incapaz de realmente e profundamente retribuir. O aspecto mais, digamos delicioso… das comunidades de código aberto é como eles não têm medo de deixar “tudo para fora”, por assim dizer.</p>
+</div>
+<div class="paragraph">
+<p>Então como resultado, para qualquer tarefa em .Net você deve ter – se tiver sorte – de escolher entre talvez duas bibliotecas talvez decentes. Por outro lado, em qualquer linguagem open source popular, você terá facilmente uma dúzia de alternativas para a mesma função. Sim, talvez seis delas quebrem, seja obsoletas, não funcionem, ou sejam absolutamente loucas. Mas ei, mesmo levando em conta algumas deteriorações naturais de fonte aberta, você ainda está à frente por um fator de três! Você que sai ganhando!</p>
+</div>
+<div class="paragraph">
+<p>Eu escrevi há <a href="http://www.codinghorror.com/blog/2007/05/giving-up-on-microsoft.html">cinco anos atrás</a>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Eu sou pragmático. No momento, eu escolho viver no universo Microsoft. Mas isso não significa que sou ignorante de como os outros vivem. Sempre há mais de um jeito de fazer, e só porque eu escolhi uma em particular não quer dizer que seja a certa – nem mesmo uma maneira particularmente boa. Escolher ser provincial e insular é um caminho infalível para a ignorância. aprenda como os outros vivem. Tente conhecer alguns desenvolvedores que não vivem exatamente no mesmo mundo que você. Procure as ferramentas que estão usando, e porque. Se depois de molhar o seu pé nos dois lados da cerca, você decidir que o outro lado está vivendo melhor e deseja se juntar a eles, então te desejo um amoroso adeus.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Eu não vivo mais no universo Microsoft. Certo, errado, bom, mau, é assim que ele saiu para o projeto que queríamos construir.</p>
+</div>
+<div class="paragraph">
+<p>Contudo, eu estaria mentindo se não falasse que eu realmente acredito que o tipo de projeto que estamos construindo no Discourse representa sim o futuro do software. Se você olhar de soslaio um pouco, eu acho que você pode ver um futuro não muito distante onde o .Net é um nicho especializado fora do mainstream.</p>
+</div>
+<div class="paragraph">
+<p>Mas <strong>por que Ruby?</strong> Bem, a menor resposta e não muito glamorosa é a de que eu reduzi a lista a Python ou Ruby, e meu co-fundador original <a href="http://eviltrout.com/">Robin Ward</a> vem construindo grandes aplicações em Rails desde 2006. Então isso me conquistou.</p>
+</div>
+<div class="paragraph">
+<p>Eu sempre fui um pouco intrigado com o Ruby, principalmente por causa do <a href="https://sites.google.com/site/steveyegge2/tour-de-babel">absolutamente transbordante louvor que Steve Yegge fez com a linguagem muito tempo atrás em 2006</a>. Eu nunca esqueci disso.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Na maior parte, Ruby pegou o processamento de string e integração com o Unix do Perl, o que significa que a sintaxe é idêntica, e assim por ali mesmo, antes de qualquer coisa acontecer, você já tem o melhor de Perl. E isso é um grande começo, especialmente se você não pega o resto do Perl.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Mas então Matz pegou o melhor de processamento de listas do Lisp, o melhor de Orientação a Objetos do Smalltalk e outras linguagens, e o melhor de iterators do CLU, e basicamente o melhor de tudo de todos.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>E ele de alguma forma fez com que tudo funcionasse junto tão bem que você nem percebe que é tudo isso. Eu aprendi Ruby mais rápido do que qualquer outra linguagem, de umas 30 ou 40 no total: levou uns 3 dias para que eu me sentisse muito mais confortável usando Ruby, do que em Perl, depois de oito anos de codificação em Perl. Ele é tão consistente que você começa a ser capaz de adivinhar como as coisas vão funcionar, e na maioria das vezes você está certo. É lindo. E divertido. E prático.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Steve é um desses programadores poliglotas que eu <a href="http://www.codinghorror.com/blog/2012/07/but-you-did-not-persuade-me.html">respeito tanto</a> que eu basicamente só tomo seja qual for a sua opinião, desde que não se trate de algo maluco como o controle de armas ou feminismo ou T’Pau, e aceito como fato.</p>
+</div>
+<div class="paragraph">
+<p>Peço desculpas, Steve. Sinto muito que me levou 7 anos para dar a volta a Ruby. Mas talvez era melhor esperar um tempo de qualquer maneira:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ruby tem uma performance decente, mas você realmente precisa <strong>jogar uma maquina rápida para ele para ter um bom desempenho</strong>. Sim, eu sei, <a href="http://www.codinghorror.com/blog/2006/02/the-day-performance-didnt-matter-any-more.html">linguagens interpretadas são o que são</a>, e cache, banco de dados, rede, blá blá blá. Ainda assim, obtivemos as maquinas mais rápidas que você pode comprar para os servidores Discourse, 4.0 Ghz Ivy Bridge Xeons, e a performance é apenas … boa no hardware mais rápido de hoje. Não muito bom. Bom.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Sim, eu vou admitir que estou completamente mimado pela performance do JIT compilado do .Net. É o que eu estou acostumado. Eu faço às vezes definhar para os maus velhos tempos de. NET quando poderíamos construir páginas que servem em bem menos de 50 milissegundos sem pensar muito. Linguagens interpretadas não vão ser capazes de alcançar esses níveis de desempenho. Mas eu só posso imaginar como o desempenho bruto Ruby tinha que estar de volta na idade das trevas de 2006, quando CPUs e servidores eram cinco vezes mais lento do que são hoje! Estou muito feliz que eu estou atacando de Ruby agora, com o forte vento de muitos anos sólidos da lei de Moore em nossas costas.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Ruby está <strong>amadurecendo muito bem</strong> na {uri-ruby2}[versão 2.0 da linguagem], o que não aconteceu não mais que um mês depois do Discourse foi anunciado. Então, sim, a desvantagem é que Ruby é lento. Mas o lado positivo é que há um monte de Gems de baixa performance na Rubyland. No Discourse nós temos uma melhoria de desempenho de 20% apenas atualizando para o Ruby 2.0, e nós quase dobramos o nosso desempenho, <a href="http://meta.discourse.org/t/tuning-ruby-and-rails-for-discourse/4126">aumentando o limite de garbage collector padrão do Ruby</a>. De uma perspectiva de desempenho futuro, Ruby é nada mas vantagem.</p>
+</li>
+<li>
+<p>Ruby <strong>não é mais cool</strong>. Sim, você me escutou. Não é mais legal escrever código Ruby. Todas as pessoas legais se mudaram para Scala e Node.js anos atrás. Nosso projeto não é legal, é só um monte do código Ruby velho e chato. Pessoalmente, estou muito feliz que o Ruby agora é maduro o suficiente para que a comunidade não precise mais se preocupar com a pretensão de ser o garoto mais legal do bloco. Isto significa que o resto de nós que gosta apenas de deixar as coisas prontas (Get Shit Done) pode arregaçar as mangas e se concentrar na missão de construir coisas com os nossos pares, em vez de correr freneticamente tentando <a href="http://www.codinghorror.com/blog/2008/01/the-magpie-developer.html">desvendar a próxima coisa brilhante</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>E é claro que a comunida Ruby é e sempre foi, incrível. Nós nunca queremos para grandes gemas de código aberto e grandes contribuidores de código aberto. Agora é um momento fantástico para começar com o Ruby, na minha opinião, seja qual for o seu background.</p>
+</div>
+<div class="paragraph">
+<p>(No entanto, é também importante ressaltar que o Discourse é, se alguma coisa, ainda mais um <strong>projeto JavaScript</strong> do que um projeto Ruby on Rails. Você não acredita em mim? Basta ir ao try.discourse.org e ver o código fonte. Um fórum de Discourse não é tanto de um website, mas uma aplicação bem desenvolvida em JavaScript que acontece de ser executado em seu navegador.)</p>
+</div>
+<div class="paragraph">
+<p>Mesmo que sendo feito de boa vontade e para os melhores interesses do projeto, ainda é um pouco assustador mudar totalmente sua espécie de programação da noite para o dia depois de duas décadas. Eu sempre acreditei que os grandes programadores aprender a amar mais de uma linguagem e ambiente de programação – e espero que o projeto Discourse seja uma oportunidade para que todos possam aprender e crescer, não só comigo. <strong>Então vai e faz um <a href="https://github.com/discourse/discourse">fork no GitHub</a> já</strong>!</p>
+</div>]]></description><link>https://arthurmolina.github.io/2013/11/03/Por-que-Ruby.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2013/11/03/Por-que-Ruby.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Sun, 03 Nov 2013 00:00:00 GMT</pubDate></item><item><title><![CDATA[Alguém com senso de humor: Bill Gates]]></title><description><![CDATA[<div class="paragraph">
 <p>O criador da Microsoft deu uma entrevista ao Reditt há dois dias atrás e podemos dizer que o cara tem muito senso de humor. Algumas perguntas e respostas:</p>
 </div>
 <div class="paragraph">
