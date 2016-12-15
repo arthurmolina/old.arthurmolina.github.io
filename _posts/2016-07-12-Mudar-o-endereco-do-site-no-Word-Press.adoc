@@ -1,0 +1,18 @@
+= Mudar o endereço do site no WordPress
+:published_at: 2016-07-12
+
+O WordPress é o CMS mais usado só que tem algumas coisas nele que são muito chatas. E uma delas é o fato de ele não permitir que se troque o endereço do site sem quebrar o banco. Por exemplo, se eu criei o meu site inicialmente em http://localhost/meu_blog (afinal a gente tem que testar antes de colocar em produção) e depois coloquei ele num servidor com a url http://meu_blog.com.br/ não basta eu simplesmente fazer a cópia de tudo, fazer o dump do banco e restaurar na minha nova aplicação. Vai dar erro. Com certeza.
+
+A parte “boa” é que não é necessário mudar nada nos arquivos, só no banco. Hein?
+
+Pois é. Eu preferia muito mais que fosse uma mudança apenas em um arquivo e não no banco… Mas fazer o que né?
+
+O que você precisa fazer é usar o comando sed. Quem tem linux, mais uma vez sai na frente pois ele já vem com o mesmo. Quem tem windows pode baixar daqui: http://gnuwin32.sourceforge.net/packages/sed.htm
+
+Finalmente basta rodar o comando abaixo no arquivo de dump de banco:
+
+    sed -i ‘s/localhost\/meublog/meu_blog\.com\.br/g’ database.sql
+
+Se você quiser preservar o arquivo original, basta usar este comando:
+
+    sed ‘s/localhost\/meublog/meu_blog\.com\.br/g’ database.sql > new_database.sql
