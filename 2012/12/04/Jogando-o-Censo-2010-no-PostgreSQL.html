@@ -11,8 +11,8 @@
     <link href="//fonts.googleapis.com/css?family=Noto+Sans:300,400,700" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic" rel="stylesheet" type="text/css">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link href="//arthurmolina.github.io/themes/saga/assets/css/style.css?v=1481806771313" rel="stylesheet" type="text/css">
-    <link href="//arthurmolina.github.io/themes/saga/assets/css/animate.min.css?v=1481806771313" rel="stylesheet" type="text/css">
+    <link href="//arthurmolina.github.io/themes/saga/assets/css/style.css?v=1481806989007" rel="stylesheet" type="text/css">
+    <link href="//arthurmolina.github.io/themes/saga/assets/css/animate.min.css?v=1481806989007" rel="stylesheet" type="text/css">
     <link href="https://arthurmolina.github.io/favicon.ico" rel="shortcut icon">
     <link rel="canonical" href="https://arthurmolina.github.io/2012/12/04/Jogando-o-Censo-2010-no-PostgreSQL.html" />
     <meta name="referrer" content="origin" />
@@ -68,7 +68,7 @@ null
 <p>Mas o problema não está no download. Primeiro, o IBGE disponibiliza os arquivos em dois formatos: XLS e CSV. O problema é que a conversão do XLS para CSV deles não saiu correta. Alguns CSV vieram com a coluna do código do setor em formato de notação científica, além disso devem ter se confundindo no arquivo do Espirito Santo que não colocaram um dos CSV e substituiram por um XLS… Ou seja, não podemos contar com os arquivos CSV salvos pelo IBGE. Outro erro que encontrei depois na hora de jogar os dados dentro das tabelas foi que os arquivos não estão padronizados!!! Por exemplo, os arquivos de Entorno para os estados do Ceará, Distrito Federal, Minas Gerais, Pernambuco e Rio Grande do Sul estão com menos colunas que os outros. Voltaremos a isso mais abaixo.</p>
 </div>
 <div class="paragraph">
-<p>Outra questão a se pensar é no dicionário das variáveis. Cada estado tem 26 tabelas. E o dicionário de cada tabela está num arquivo PDF dentro de cada ZIP chamado BASE DE INFORMAÇÕES POR SETOR CENSITÁRIO Censo 2010 – Universo.pdf. Um formato nada interessante pois fica muito dificil de tirar os dados de modo automatizado. A solução que encontrei foi converter o PDF em DOC usando este site. E depois tive um trabalho braçal de converter cada um em uma tabela XLS. Coloquei o arquivo disponível para quem não quiser ter o trabalho que tive.</p>
+<p>Outra questão a se pensar é no dicionário das variáveis. Cada estado tem 26 tabelas. E o dicionário de cada tabela está num arquivo PDF dentro de cada ZIP chamado BASE DE INFORMAÇÕES POR SETOR CENSITÁRIO Censo 2010 – Universo.pdf. Um formato nada interessante pois fica muito dificil de tirar os dados de modo automatizado. A solução que encontrei foi converter o PDF em DOC usando este site. E depois tive um trabalho braçal de converter cada um em uma <a href="https://arthurmolina.github.io/download/DadosCenso2010.xls">tabela XLS</a>. Coloquei o arquivo disponível para quem não quiser ter o trabalho que tive.</p>
 </div>
 <div class="paragraph">
 <p>Voltando novamente aos dados. Quem usa Linux sai em vantagem pois ele possui vários comandos que possibilitam executar uma conversão em lote. Abaixo um script shell para rodar e transformar os ZIPs que você baixou do site em um arquivo único para cada uma das 26 tabelas. Antes de rodar esse script é importante que alguns programas estejam instalados. Para isso basta rodar:</p>
@@ -261,7 +261,7 @@ fwrite($f, $sql_dic . "\n\n" . $sql_banco . "\n\n" . $sql_populate);
 
         hljs.initHighlightingOnLoad();
       </script>
-    <script src="//arthurmolina.github.io/themes/saga/assets/js/scripts.js?v=1481806771313"></script>
+    <script src="//arthurmolina.github.io/themes/saga/assets/js/scripts.js?v=1481806989007"></script>
     
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
