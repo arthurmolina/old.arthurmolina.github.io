@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>E quando preciso encontrar uma string específica dentro de um banco mas não sei em qual tabela nem coluna?</title>
+    <meta name="description" content="" />
+    <link href="//fonts.googleapis.com/css?family=Noto+Sans:300,400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="//arthurmolina.github.io/themes/saga/assets/css/style.css?v=1481809154721" rel="stylesheet" type="text/css">
+    <link href="//arthurmolina.github.io/themes/saga/assets/css/animate.min.css?v=1481809154721" rel="stylesheet" type="text/css">
+    <link href="https://arthurmolina.github.io/favicon.ico" rel="shortcut icon">
+    <link rel="canonical" href="https://arthurmolina.github.io/2014/11/05/E-quando-preciso-encontrar-uma-string-especifica-dentro-de-um-banco-mas-nao-sei-em-qual-tabela-nem-coluna.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="Artz World" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="E quando preciso encontrar uma string específica dentro de um banco mas não sei em qual tabela nem coluna?" />
+    <meta property="og:description" content="Hoje tive uma necessidade que vivo tendo e sempre usei outro modo de resolver. Nunca tinha mexido nesse banco antes, mas chegaram pra mim pedindo pra alterar o número do contrato para digamos ‘666/2014′ onde antes era ‘333/2012′. Como fazer? Normalmente eu faço um dump do banco e" />
+    <meta property="og:url" content="https://arthurmolina.github.io/2014/11/05/E-quando-preciso-encontrar-uma-string-especifica-dentro-de-um-banco-mas-nao-sei-em-qual-tabela-nem-coluna.html" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="E quando preciso encontrar uma string específica dentro de um banco mas não sei em qual tabela nem coluna?" />
+    <meta name="twitter:description" content="Hoje tive uma necessidade que vivo tendo e sempre usei outro modo de resolver. Nunca tinha mexido nesse banco antes, mas chegaram pra mim pedindo pra alterar o número do contrato para digamos ‘666/2014′ onde antes era ‘333/2012′. Como fazer? Normalmente eu faço um dump do banco e" />
+    <meta name="twitter:url" content="https://arthurmolina.github.io/2014/11/05/E-quando-preciso-encontrar-uma-string-especifica-dentro-de-um-banco-mas-nao-sei-em-qual-tabela-nem-coluna.html" />
+    
+    <script type="application/ld+json">
+null
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="Artz World" href="https://arthurmolina.github.io/rss/" />
+</head>
+<body class="post-template">
+    <header id="header" class="animated fadeIn">
+    <div class="header-background">
+    <section class="blog-content">
+        <a id="site-url" class="blog-title" href="https://arthurmolina.github.io">Artz World</a>
+        <span class="blog-description">$DO || !$DO : try&lt;br&gt; try: Commando not found.</span>
+        <nav class="links fadeIn animated">
+            <ul>
+                <li class="rss"><a title="RSS Feed" href="/rss/"><i class="fa fa-fw fa-rss-square"></i></a></li>
+        
+            </ul>
+        </nav>
+    </section>
+    <section class="header-content">
+        <h1 class="post-title animated fadeInUp">E quando preciso encontrar uma string específica dentro de um banco mas não sei em qual tabela nem coluna?</h1>
+        <span class="post-data"><span class="date animated fadeInUp"><i class="fa fa-clock-o"></i> <time class="timesince date" data-timesince="1415156400" datetime="2014-11-05T00:00" title="05 November 2014">2 years ago</time></span>
+            
+            <span class="author animated fadeInUp"><i class="fa fa-user"></i> <a href="https://arthurmolina.github.io/author/arthurmolina/">Arthur Molina</a></span></span>
+    </section>
+    </div>
+</header>
+<main id="main" class="content">
+    <article itemtype="http://schema.org/BlogPosting" class="animated fadeIn content post post">
+        <section class="post-content">
+            <div class="paragraph">
+<p>Hoje tive uma necessidade que vivo tendo e sempre usei outro modo de resolver. Nunca tinha mexido nesse banco antes, mas chegaram pra mim pedindo pra alterar o número do contrato para digamos ‘666/2014′ onde antes era ‘333/2012′. Como fazer? Normalmente eu faço um dump do banco e faço uma busca do texto em modo texto mesmo (usando um editor ou o comando grep). Mas conversando com meu amigo DBA ( valeu Adolfho Lopes! ) decidimos fazer de outro modo.</p>
+</div>
+<div class="paragraph">
+<p>Abaixo está o resultado, mas atenção: Use com moderação!
+Estas funções são para serem usadas em momento de necessidade e pressa. Nunca em produção. Não faz isso, senão cabôsse o banco! :)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sql" data-lang="sql">CREATE TYPE table_master_search_table AS (
+    tname varchar,
+    cname varchar,
+    found varchar
+);
+
+CREATE OR REPLACE FUNCTION master_search_table(p_search_string varchar, p_tablecatalog varchar, p_tableschema varchar, p_tablename varchar)
+RETURNS SETOF table_master_search_table AS
+$$
+DECLARE r record;
+   r2 table_master_search_table%rowtype;
+   t1 table_master_search_table;
+   command varchar;
+BEGIN
+  FOR r IN SELECT table_name, column_name, data_type from information_schema.columns
+	where table_catalog = p_tablecatalog and table_schema = p_tableschema and table_name = p_tablename LOOP
+	command := 'SELECT '''|| r.table_name || ''' tname, '''|| r.column_name || ''' cname, ' || r.column_name|| ' found FROM ' || r.table_name || ' WHERE cast(' || r.column_name || ' as varchar) like ''%' || p_search_string || '%''';
+	raise notice '%',command;
+    FOR r2 IN EXECUTE command LOOP
+     return NEXT r2;
+    END LOOP;
+
+  END LOOP;
+END
+$$ LANGUAGE plpgsql;
+
+CREATE TYPE table_master_search AS (tname varchar, quant integer);
+CREATE OR REPLACE FUNCTION master_search(p_search_string varchar, p_tablecatalog varchar, p_tableschema varchar)
+RETURNS SETOF table_master_search AS
+$$
+declare
+  num int:=1;
+  col record;
+  tab record;
+  comando varchar;
+  r table_master_search%rowtype;
+BEGIN
+  FOR tab in select table_name from information_schema.tables where table_schema=p_tableschema and table_type = 'BASE TABLE' LOOP
+   comando = 'select '''|| tab.table_name || ''' tname, count(1) quant from '||tab.table_name||' where ';
+   FOR col in select count(1) over (partition by table_name) numcols, row_number() over (partition by table_name) seq, * from information_schema.columns
+	where table_schema = p_tableschema and table_name = tab.table_name LOOP
+       comando :=  comando || 'cast(' || col.column_name ||' as varchar) like ''%' || p_search_string ||'%''';
+       IF col.seq &lt;&gt; col.numcols then
+         comando :=  comando || ' or ';
+       END IF;
+   END LOOP;
+   RAISE notice '%',comando;
+   EXECUTE comando into r;
+   IF r.quant &gt; 0 then
+     RETURN next r;
+   END IF;
+  END LOOP;
+END
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION master_search_full(p_search_string varchar, p_tablecatalog varchar, p_tableschema varchar)
+RETURNS SETOF table_master_search_table AS
+$$
+declare
+  num int:=1;
+  col record;
+  tab record;
+  comando varchar;
+  r table_master_search_table%rowtype;
+BEGIN
+  FOR tab IN SELECT * FROM master_search(p_search_string, p_tablecatalog, p_tableschema) LOOP
+    FOR r IN SELECT * from master_search_table(p_search_string, p_tablecatalog, p_tableschema, tab.tname) LOOP
+     RETURN next r;
+    END LOOP;
+  END LOOP;
+END
+$$ LANGUAGE plpgsql;
+
+select * from master_search_table('string', 'catalogo', 'schema', 'usuarios');
+select * from master_search('string', 'catalogo', 'schema');
+select * from master_search_full('string', 'catalogo', 'schema');</code></pre>
+</div>
+</div>
+        </section>
+
+    
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'artzblog-1'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+    
+    </article>
+
+</main>
+    <footer class="animated fadeIn" id="footer">
+        <section class="colophon">
+          <section class="copyright">Copyright &copy; <span itemprop="copyrightHolder">Artz World</span>. <span rel="license">All Rights Reserved</span>.</section>
+          <section class="poweredby">Published with <a class="icon-ghost" href="http://hubpress.io">HubPress</a></section>
+        </section>
+        <section class="bottom">
+          <section class="attribution">
+            <a href="http://github.com/Reedyn/Saga">Built with <i class="fa fa-heart"></i> and Free and Open-Source Software</a>.
+          </section>
+        </section>
+    </footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+    <script src="//arthurmolina.github.io/themes/saga/assets/js/scripts.js?v=1481809154721"></script>
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-34180643-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>
