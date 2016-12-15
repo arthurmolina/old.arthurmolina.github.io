@@ -1,10 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Artz World]]></title><description><![CDATA[$DO || !$DO : try<br> try: Commando not found.]]></description><link>https://arthurmolina.github.io</link><image><url>https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&amp;h=414.91395793499044&amp;q=40&amp;dpr=2&amp;auto=format&amp;fit=max&amp;crop=faces</url><title>Artz World</title><link>https://arthurmolina.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Thu, 15 Dec 2016 13:51:39 GMT</lastBuildDate><atom:link href="https://arthurmolina.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Genesis]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Artz World]]></title><description><![CDATA[$DO || !$DO : try<br> try: Commando not found.]]></description><link>https://arthurmolina.github.io</link><image><url>https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&amp;h=414.91395793499044&amp;q=40&amp;dpr=2&amp;auto=format&amp;fit=max&amp;crop=faces</url><title>Artz World</title><link>https://arthurmolina.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Thu, 15 Dec 2016 13:54:34 GMT</lastBuildDate><atom:link href="https://arthurmolina.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Genesis]]></title><description><![CDATA[<div class="paragraph">
 <p>Aqui é onde tudo começa.
 Here is where all begins.</p>
 </div>
 <div class="paragraph">
 <p>Começando a usar o Hubpres e migrando os meus posts antigos do Wordpress.</p>
-</div>]]></description><link>https://arthurmolina.github.io/2016/12/14/Genesis.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2016/12/14/Genesis.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Wed, 14 Dec 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Backup para o Google Drive]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>https://arthurmolina.github.io/2016/12/14/Genesis.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2016/12/14/Genesis.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Wed, 14 Dec 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Mudar o endereço do site no WordPress]]></title><description><![CDATA[<div class="paragraph">
+<p>O WordPress é o CMS mais usado só que tem algumas coisas nele que são muito chatas. E uma delas é o fato de ele não permitir que se troque o endereço do site sem quebrar o banco. Por exemplo, se eu criei o meu site inicialmente em <a href="http://localhost/meu_blog" class="bare">http://localhost/meu_blog</a> (afinal a gente tem que testar antes de colocar em produção) e depois coloquei ele num servidor com a url <a href="http://meu_blog.com.br/" class="bare">http://meu_blog.com.br/</a> não basta eu simplesmente fazer a cópia de tudo, fazer o dump do banco e restaurar na minha nova aplicação. Vai dar erro. Com certeza.</p>
+</div>
+<div class="paragraph">
+<p>A parte “boa” é que não é necessário mudar nada nos arquivos, só no banco. Hein?</p>
+</div>
+<div class="paragraph">
+<p>Pois é. Eu preferia muito mais que fosse uma mudança apenas em um arquivo e não no banco… Mas fazer o que né?</p>
+</div>
+<div class="paragraph">
+<p>O que você precisa fazer é usar o comando sed. Quem tem linux, mais uma vez sai na frente pois ele já vem com o mesmo. Quem tem windows pode baixar daqui: <a href="http://gnuwin32.sourceforge.net/packages/sed.htm" class="bare">http://gnuwin32.sourceforge.net/packages/sed.htm</a></p>
+</div>
+<div class="paragraph">
+<p>Finalmente basta rodar o comando abaixo no arquivo de dump de banco:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sed -i ‘s/localhost\/meublog/meu_blog\.com\.br/g’ database.sql</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Se você quiser preservar o arquivo original, basta usar este comando:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sed ‘s/localhost\/meublog/meu_blog\.com\.br/g’ database.sql &gt; new_database.sql</pre>
+</div>
+</div>]]></description><link>https://arthurmolina.github.io/2016/07/12/Mudar-o-endereco-do-site-no-Word-Press.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2016/07/12/Mudar-o-endereco-do-site-no-Word-Press.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Tue, 12 Jul 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Backup para o Google Drive]]></title><description><![CDATA[<div class="paragraph">
 <p>Faz um tempo que não publico nada, mas hoje decidi colocar uma dica que acabei de usar.</p>
 </div>
 <div class="paragraph">
