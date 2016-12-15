@@ -1,0 +1,87 @@
+= E quando preciso encontrar uma string específica dentro de um banco mas não sei em qual tabela nem coluna?
+:published_at: 2014-11-05
+
+Hoje tive uma necessidade que vivo tendo e sempre usei outro modo de resolver. Nunca tinha mexido nesse banco antes, mas chegaram pra mim pedindo pra alterar o número do contrato para digamos ‘666/2014′ onde antes era ‘333/2012′. Como fazer? Normalmente eu faço um dump do banco e faço uma busca do texto em modo texto mesmo (usando um editor ou o comando grep). Mas conversando com meu amigo DBA ( valeu Adolfho Lopes! ) decidimos fazer de outro modo.
+
+Abaixo está o resultado, mas atenção: Use com moderação!
+Estas funções são para serem usadas em momento de necessidade e pressa. Nunca em produção. Não faz isso, senão cabôsse o banco! :)
+
+[source, sql]
+----
+CREATE TYPE table_master_search_table AS (
+    tname varchar,
+    cname varchar,
+    found varchar
+);
+
+CREATE OR REPLACE FUNCTION master_search_table(p_search_string varchar, p_tablecatalog varchar, p_tableschema varchar, p_tablename varchar)
+RETURNS SETOF table_master_search_table AS 
+$$
+DECLARE r record;
+   r2 table_master_search_table%rowtype;
+   t1 table_master_search_table;
+   command varchar;
+BEGIN
+  FOR r IN SELECT table_name, column_name, data_type from information_schema.columns 
+	where table_catalog = p_tablecatalog and table_schema = p_tableschema and table_name = p_tablename LOOP
+	command := 'SELECT '''|| r.table_name || ''' tname, '''|| r.column_name || ''' cname, ' || r.column_name|| ' found FROM ' || r.table_name || ' WHERE cast(' || r.column_name || ' as varchar) like ''%' || p_search_string || '%''';
+	raise notice '%',command;
+    FOR r2 IN EXECUTE command LOOP
+     return NEXT r2;
+    END LOOP;
+	
+  END LOOP;
+END
+$$ LANGUAGE plpgsql;
+
+CREATE TYPE table_master_search AS (tname varchar, quant integer);
+CREATE OR REPLACE FUNCTION master_search(p_search_string varchar, p_tablecatalog varchar, p_tableschema varchar)
+RETURNS SETOF table_master_search AS 
+$$
+declare
+  num int:=1;
+  col record;
+  tab record;
+  comando varchar;
+  r table_master_search%rowtype;
+BEGIN
+  FOR tab in select table_name from information_schema.tables where table_schema=p_tableschema and table_type = 'BASE TABLE' LOOP 
+   comando = 'select '''|| tab.table_name || ''' tname, count(1) quant from '||tab.table_name||' where ';
+   FOR col in select count(1) over (partition by table_name) numcols, row_number() over (partition by table_name) seq, * from information_schema.columns  
+	where table_schema = p_tableschema and table_name = tab.table_name LOOP        
+       comando :=  comando || 'cast(' || col.column_name ||' as varchar) like ''%' || p_search_string ||'%''';
+       IF col.seq <> col.numcols then 
+         comando :=  comando || ' or ';       
+       END IF;       
+   END LOOP;
+   RAISE notice '%',comando;
+   EXECUTE comando into r;
+   IF r.quant > 0 then
+     RETURN next r;
+   END IF;
+  END LOOP;
+END
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION master_search_full(p_search_string varchar, p_tablecatalog varchar, p_tableschema varchar)
+RETURNS SETOF table_master_search_table AS 
+$$
+declare
+  num int:=1;
+  col record;
+  tab record;
+  comando varchar;
+  r table_master_search_table%rowtype;
+BEGIN
+  FOR tab IN SELECT * FROM master_search(p_search_string, p_tablecatalog, p_tableschema) LOOP
+    FOR r IN SELECT * from master_search_table(p_search_string, p_tablecatalog, p_tableschema, tab.tname) LOOP
+     RETURN next r;
+    END LOOP;
+  END LOOP;
+END 
+$$ LANGUAGE plpgsql;
+
+select * from master_search_table('string', 'catalogo', 'schema', 'usuarios');
+select * from master_search('string', 'catalogo', 'schema');
+select * from master_search_full('string', 'catalogo', 'schema');
+----
