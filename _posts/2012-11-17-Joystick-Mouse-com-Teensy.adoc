@@ -1,0 +1,80 @@
+= Joystick Mouse com Teensy
+:published_at: 2012-11-17
+:uri-teensy: http://www.pjrc.com/teensy/
+:uri-hid: http://en.wikipedia.org/wiki/Human_interface_device
+:uri-joystick: http://dx.com/p/repair-parts-replacement-analog-stick-module-for-ps2-controller-black-121340
+
+Tenho feito algumas brincadeiras com computação física e aceitei o meu primeiro projeto de um dispositivo usando microprocessador. Enquanto o componente que preciso pra terminar esse projeto não chega (fiz o pedido pelo MercadoLivre) decidi brincar com outros componentes. Como eu estou fazendo um dispositivo que vai simular alguns comandos de teclado, decidi usar o {uri-teensy}[Teensy 2.0] que possibilita uma programação de {uri-hid}[HID] de modo bem fácil. É incrível como é fácil fazer isso com o Teensy.
+
+Aproveitei um {uri-joystick}[módulo de joystick] que já tinha e adaptei o controle do mouse.
+
+Então aqui vai a receita:
+Ingredientes:
+
+- Teensy 2.0
+- Módulo Joystick KY-023
+- alguns fios
+- Adaptador USB
+
+== Programação
+
+[source, C]
+----
+int joyPin1 = PIN_F0;
+int joyPin2 = PIN_F1;
+int v1 = 0;
+int v2 = 0;
+int v1Padrao = 0;
+int v2Padrao = 0;
+int passo = 20;
+
+void setup() {
+  Serial.begin(9600);
+  v1Padrao = analogRead(joyPin1);
+  delay(100);
+  v2Padrao = analogRead(joyPin2);
+}
+
+int change(int v, int unchange, int max_state) {
+  if(v > unchange) {
+    return int(passo * ( v – unchange ) / (max_state – unchange));
+  } else if (v < unchange) {
+    return int( (v / unchange * passo) – passo );
+  }
+  return 0;
+}
+
+void loop() {
+  v1 = analogRead(joyPin1);
+  delay(100);
+  v2 = analogRead(joyPin2);
+  Serial.println(“—-“);
+  Serial.print(v1);
+  Serial.print(” – “);
+  Serial.println(change(v1, v1Padrao, 1023));
+  Serial.print(v2);
+  Serial.print(” – “);
+  Serial.println(change(v2, v2Padrao, 997) );
+  Mouse.move( change(v1, 506, 1023) , change(v2, 512, 997) );
+  delay(100);
+}
+----
+
+== O Esquema do Fritzing
+image::https://arthurmolina.github.io/images/MouseX.png[]
+
+== Alguma explicações
+
+O Joystick nada mais é do que dois potenciômetros e ainda um botão (para o caso de você pressionar o joystick pra baixo). O terminal VRx e VRy estão ligados à portas analógicas do Teensy enquanto o terminal SW que é o do botão está conectado a uma porta digital (apesar de não estar sendo usado). As portas analógicas vão do valor Zero a 1023. Só que a partir de alguns testes eu descobri que em um eixo os valores vão de zero a 1023 parando em 506 quando está centralizado e o outro eixo vai de zero a 997 parando em 512. Certamente outras peças terão limites diferentes. A função change faz o serviço de adaptar o valor retornado pelos potenciômetros para o número mais interessante para a função do mouse que deverá ir de -127 a 127.
+
+ 
+
+== Problemas
+
+Eu tentei fazer funcionar o botão que vem com ele como clique do mouse, contudo eu não sei por qual motivo as vezes o valor é zero e outras é 1 sem nem mexer no joystick. Outra questão é que não é sempre que ele move pro sentido correto. Não entendi o motivo. Se alguem souber, me explique.
+
+ 
+
+Aqui está o resultado:
+
+image::https://arthurmolina.github.io/images/MouseX2.png[]
