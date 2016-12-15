@@ -15,28 +15,29 @@ sudo apt-get install unoconv libreoffice unzip
 
 E o script:
 
+[source, bash]
 ----
 #!/bin/sh
 
 mkdir xls
 for i in $(ls *.zip)
 do
-unzip -j $i -x *.csv *.pdf -d xls
+  unzip -j $i -x *.csv *.pdf -d xls
 done
 cd xls
 unoconv -i 59,34,UTF-8 -f csv *
 cd ..
 
 for i in $(ls ./xls/*.csv | grep -v Basico)
-doDadosCenso2010
-lc=`echo $i | tr '[A-Z]' '[a-z]'`
-sed '1d' $i | sed 's/,/./g' | sed 's/X//g' > $lc.csv
+do
+  lc=`echo $i | tr '[A-Z]' '[a-z]'`
+  sed '1d' $i | sed 's/,/./g' | sed 's/X//g' > $lc.csv
 done
 
 for i in $(ls ./xls/*.csv | grep Basico)
 do
-lc=`echo $i | tr '[A-Z]' '[a-z]'`
-sed '1d' $i | sed 's/,/./g' > $lc.csv
+  lc=`echo $i | tr '[A-Z]' '[a-z]'`
+  sed '1d' $i | sed 's/,/./g' > $lc.csv
 done
 
 cat ./xls/basico*.csv.csv > Basico.csv
@@ -75,6 +76,7 @@ Finalmente as linhas subsequentes usam o comando sed duas vezes, a primeira para
 Pronto. Os arquivos estão prontos para jogar no banco.
 Depois criei um pequeno script em PHP que converte o XLS com a tabela XLS que falei anteriormente que vai gerar um SQL pra executar no PostgreSQL:
 
+[source, php]
 ----
 passthru("unoconv -i 59,34,UTF-8 -f csv DadosCenso2010.xls");
 
@@ -87,59 +89,57 @@ $path = '/home/artz/censo/dados/';
 
 $sql_dic = << CREATE TABLE dicionario
 (
-cod serial,
-banco character varying,
-variavel character varying,
-descricao character varying
+  cod serial,
+  banco character varying,
+  variavel character varying,
+  descricao character varying
 );
 
 SQL_DIC;
 $i = 0;
 foreach($dic as $v) {
-$v = explode(';', $v);
-//$i++;
-//if($i > 10) die;
+  $v = explode(';', $v);
 
-if($tit == true) {
-if($v[0] != '') {
-if(count($sql_bd) > 0) {
-$sql_banco .= "CREATE TABLE " . $titulo . "_2010_SC (\n"
-. implode(",\n", $sql_bd)
-. ");\n\n";
-$sql_populate .= "COPY " . $titulo . "_2010_SC FROM '" . $path . $titulo . ".csv' DELIMITERS ';' CSV;\n";
-$sql_bd = Array();
-echo "Creating $titulo...\n";
-}
-$titulo = str_replace(' ', '_', tiracento($v[0]));
-$desc = $v[1];
-$tit = false;
-}
-} else {
-if($v[0] == '') {
-$tit = true;
-} else {
-$v[0] = str_replace(' ', '_', tiracento($v[0]));
-$sql_dic .= "INSERT INTO dicionario (banco, variavel, descricao) VALUES ('" . $titulo . "_2010_SC', '" .$v[0] . "', '" . $v[1] . "');\n";
-$sql_bd[] = " " . $v[0] . ($v[2]==1 ? " character varying" : " numeric");
-$tit = false;
-}
-}
+  if($tit == true) {
+    if($v[0] != '') {
+      if(count($sql_bd) > 0) {
+        $sql_banco .= "CREATE TABLE " . $titulo . "_2010_SC (\n"
+          . implode(",\n", $sql_bd)
+          . ");\n\n";
+        $sql_populate .= "COPY " . $titulo . "_2010_SC FROM '" . $path . $titulo . ".csv' DELIMITERS ';' CSV;\n";
+        $sql_bd = Array();
+        echo "Creating $titulo...\n";
+      }
+      $titulo = str_replace(' ', '_', tiracento($v[0]));
+      $desc = $v[1];
+      $tit = false;
+    }
+  } else {
+    if($v[0] == '') {
+      $tit = true;
+    } else {
+      $v[0] = str_replace(' ', '_', tiracento($v[0]));
+      $sql_dic .= "INSERT INTO dicionario (banco, variavel, descricao) VALUES ('" . $titulo . "_2010_SC', '" .$v[0] . "', '" . $v[1] . "');\n";
+      $sql_bd[] = " " . $v[0] . ($v[2]==1 ? " character varying" : " numeric");
+      $tit = false;
+    }
+  }
 }
 
 if(count($sql_bd) > 0) {
-$sql_banco .= "CREATE TABLE " . $titulo . "_2010_SC (\n"
-. implode(",\n", $sql_bd)
-. ");\n\n";
-$sql_populate .= "COPY " . $titulo . "_2010_SC FROM '" . $path . $titulo . ".csv' DELIMITERS ';' CSV;\n";
-$sql_bd = Array();
-echo "Creating $titulo...\n";
+  $sql_banco .= "CREATE TABLE " . $titulo . "_2010_SC (\n"
+  . implode(",\n", $sql_bd)
+  . ");\n\n";
+  $sql_populate .= "COPY " . $titulo . "_2010_SC FROM '" . $path . $titulo . ".csv' DELIMITERS ';' CSV;\n";
+  $sql_bd = Array();
+  echo "Creating $titulo...\n";
 }
 
 function tiracento($texto){
-$trocarIsso = array('à','á','â','ã','ä','å','ç','è','é','ê','ë','ì','í','î','ï','ñ','ò','ó','ô','õ','ö','ù','ü','ú','ÿ','À','Á','Â','Ã','Ä','Å','Ç','È','É','Ê','Ë','Ì','Í','Î','Ï','Ñ','Ò','Ó','Ô','Õ','Ö','O','Ù','Ü','Ú','Ÿ',);
-$porIsso = array('a','a','a','a','a','a','c','e','e','e','e','i','i','i','i','n','o','o','o','o','o','u','u','u','y','A','A','A','A','A','A','C','E','E','E','E','I','I','I','I','N','O','O','O','O','O','0','U','U','U','Y',);
-$titletext = str_replace($trocarIsso, $porIsso, $texto);
-return $titletext;
+  $trocarIsso = array('à','á','â','ã','ä','å','ç','è','é','ê','ë','ì','í','î','ï','ñ','ò','ó','ô','õ','ö','ù','ü','ú','ÿ','À','Á','Â','Ã','Ä','Å','Ç','È','É','Ê','Ë','Ì','Í','Î','Ï','Ñ','Ò','Ó','Ô','Õ','Ö','O','Ù','Ü','Ú','Ÿ',);
+  $porIsso = array('a','a','a','a','a','a','c','e','e','e','e','i','i','i','i','n','o','o','o','o','o','u','u','u','y','A','A','A','A','A','A','C','E','E','E','E','I','I','I','I','N','O','O','O','O','O','0','U','U','U','Y',);
+  $titletext = str_replace($trocarIsso, $porIsso, $texto);
+  return $titletext;
 }
 
 $f = fopen('out.sql', 'w');
