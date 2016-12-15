@@ -1,5 +1,6 @@
 = Por que Ruby?
 :published_at: 2013-11-03
+:hp-image: http://sd.keepcalm-o-matic.co.uk/i/keep-calm-and-code-in-ruby-13.png
 :uri-coding: http://www.codinghorror.com/blog/2013/03/why-ruby.html
 :uri-basic: http://www.codinghorror.com/blog/2008/04/everything-i-needed-to-know-about-programming-i-learned-from-basic.html
 :uri-wintel: http://pt.wikipedia.org/wiki/Wintel
@@ -31,7 +32,8 @@ Tenho sido desenvolvedor Microsoft por algumas décadas até hoje. Eu dei meus p
     Por que vocês não desenvolveram o Discourse em .NET também?
 
 Deixemos claro uma coisa: Eu amo .NET. Uma das grandes emoções da minha carreira profissional foi ter a oportunidade de colocar um adesivo do Coding Horror nas mãos de {uri-anders}[Anders Hejlsberg]. Perdoe meu fanboy interior por um momento, mas caramba, eu ainda me arrepio. Devem ter talvez uns cinquenta projetistas de linguagem de classes de computador pelo mundo. Anders é apenas um deles que criou o Turbo Pascal e o Delphi. É graças à experiência de Anders que o .NET começou com uma linguagem tão bem projetada – literalmente o que o Java deveria ter sido em todo o nível concebível – e tem evoluído extraordinariamente de modo continuo em meios práticos pelos últimos 10 anos, aproveitando os pontos fortes de outras linguagens dinamicamente influentes.
-turbopascal
+
+image::https://arthurmolina.github.io/images/turbopascal.png[]
 
 Dito tudo isso, é verdade que eu intencionalmente escolhi não usar .NET para o meu próximo projeto. Então você pode esperar encontrar alguém bravo arengando aqui sobre o quão mais feliz estou deixando as amarras opressoras dos meus senhores Microsoft para trás. Livre afinal, livre, pelo menos, graças a Deus todo-poderoso eu sou livre enfim!
 
@@ -61,6 +63,7 @@ Eu escrevi há {uri-5anos}[cinco anos atrás]:
 
 Eu não vivo mais no universo Microsoft. Certo, errado, bom, mau, é assim que ele saiu para o projeto que queríamos construir.
 
+image::https://arthurmolina.github.io/images/iamok.png[]
 
 Contudo, eu estaria mentindo se não falasse que eu realmente acredito que o tipo de projeto que estamos construindo no Discourse representa sim o futuro do software. Se você olhar de soslaio um pouco, eu acho que você pode ver um futuro não muito distante onde o .Net é um nicho especializado fora do mainstream.
 
