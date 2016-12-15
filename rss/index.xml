@@ -1,10 +1,96 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Artz World]]></title><description><![CDATA[$DO || !$DO : try<br> try: Commando not found.]]></description><link>https://arthurmolina.github.io</link><image><url>https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&amp;h=414.91395793499044&amp;q=40&amp;dpr=2&amp;auto=format&amp;fit=max&amp;crop=faces</url><title>Artz World</title><link>https://arthurmolina.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Thu, 15 Dec 2016 13:37:33 GMT</lastBuildDate><atom:link href="https://arthurmolina.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Genesis]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Artz World]]></title><description><![CDATA[$DO || !$DO : try<br> try: Commando not found.]]></description><link>https://arthurmolina.github.io</link><image><url>https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&amp;h=414.91395793499044&amp;q=40&amp;dpr=2&amp;auto=format&amp;fit=max&amp;crop=faces</url><title>Artz World</title><link>https://arthurmolina.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Thu, 15 Dec 2016 13:39:14 GMT</lastBuildDate><atom:link href="https://arthurmolina.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Genesis]]></title><description><![CDATA[<div class="paragraph">
 <p>Aqui é onde tudo começa.
 Here is where all begins.</p>
 </div>
 <div class="paragraph">
 <p>Começando a usar o Hubpres e migrando os meus posts antigos do Wordpress.</p>
-</div>]]></description><link>https://arthurmolina.github.io/2016/12/14/Genesis.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2016/12/14/Genesis.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Wed, 14 Dec 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Função Social for Dummies ou “Registraram um domínio e não usam… E agora?”]]></title><description><![CDATA[<div class="paragraph">
+</div>]]></description><link>https://arthurmolina.github.io/2016/12/14/Genesis.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2016/12/14/Genesis.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Wed, 14 Dec 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[E quando preciso encontrar uma string específica dentro de um banco mas não sei em qual tabela nem coluna?]]></title><description><![CDATA[<div class="paragraph">
+<p>Hoje tive uma necessidade que vivo tendo e sempre usei outro modo de resolver. Nunca tinha mexido nesse banco antes, mas chegaram pra mim pedindo pra alterar o número do contrato para digamos ‘666/2014′ onde antes era ‘333/2012′. Como fazer? Normalmente eu faço um dump do banco e faço uma busca do texto em modo texto mesmo (usando um editor ou o comando grep). Mas conversando com meu amigo DBA ( valeu Adolfho Lopes! ) decidimos fazer de outro modo.</p>
+</div>
+<div class="paragraph">
+<p>Abaixo está o resultado, mas atenção: Use com moderação!
+Estas funções são para serem usadas em momento de necessidade e pressa. Nunca em produção. Não faz isso, senão cabôsse o banco! :)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sql" data-lang="sql">CREATE TYPE table_master_search_table AS (
+    tname varchar,
+    cname varchar,
+    found varchar
+);
+
+CREATE OR REPLACE FUNCTION master_search_table(p_search_string varchar, p_tablecatalog varchar, p_tableschema varchar, p_tablename varchar)
+RETURNS SETOF table_master_search_table AS
+$$
+DECLARE r record;
+   r2 table_master_search_table%rowtype;
+   t1 table_master_search_table;
+   command varchar;
+BEGIN
+  FOR r IN SELECT table_name, column_name, data_type from information_schema.columns
+	where table_catalog = p_tablecatalog and table_schema = p_tableschema and table_name = p_tablename LOOP
+	command := 'SELECT '''|| r.table_name || ''' tname, '''|| r.column_name || ''' cname, ' || r.column_name|| ' found FROM ' || r.table_name || ' WHERE cast(' || r.column_name || ' as varchar) like ''%' || p_search_string || '%''';
+	raise notice '%',command;
+    FOR r2 IN EXECUTE command LOOP
+     return NEXT r2;
+    END LOOP;
+
+  END LOOP;
+END
+$$ LANGUAGE plpgsql;
+
+CREATE TYPE table_master_search AS (tname varchar, quant integer);
+CREATE OR REPLACE FUNCTION master_search(p_search_string varchar, p_tablecatalog varchar, p_tableschema varchar)
+RETURNS SETOF table_master_search AS
+$$
+declare
+  num int:=1;
+  col record;
+  tab record;
+  comando varchar;
+  r table_master_search%rowtype;
+BEGIN
+  FOR tab in select table_name from information_schema.tables where table_schema=p_tableschema and table_type = 'BASE TABLE' LOOP
+   comando = 'select '''|| tab.table_name || ''' tname, count(1) quant from '||tab.table_name||' where ';
+   FOR col in select count(1) over (partition by table_name) numcols, row_number() over (partition by table_name) seq, * from information_schema.columns
+	where table_schema = p_tableschema and table_name = tab.table_name LOOP
+       comando :=  comando || 'cast(' || col.column_name ||' as varchar) like ''%' || p_search_string ||'%''';
+       IF col.seq &lt;&gt; col.numcols then
+         comando :=  comando || ' or ';
+       END IF;
+   END LOOP;
+   RAISE notice '%',comando;
+   EXECUTE comando into r;
+   IF r.quant &gt; 0 then
+     RETURN next r;
+   END IF;
+  END LOOP;
+END
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION master_search_full(p_search_string varchar, p_tablecatalog varchar, p_tableschema varchar)
+RETURNS SETOF table_master_search_table AS
+$$
+declare
+  num int:=1;
+  col record;
+  tab record;
+  comando varchar;
+  r table_master_search_table%rowtype;
+BEGIN
+  FOR tab IN SELECT * FROM master_search(p_search_string, p_tablecatalog, p_tableschema) LOOP
+    FOR r IN SELECT * from master_search_table(p_search_string, p_tablecatalog, p_tableschema, tab.tname) LOOP
+     RETURN next r;
+    END LOOP;
+  END LOOP;
+END
+$$ LANGUAGE plpgsql;
+
+select * from master_search_table('string', 'catalogo', 'schema', 'usuarios');
+select * from master_search('string', 'catalogo', 'schema');
+select * from master_search_full('string', 'catalogo', 'schema');</code></pre>
+</div>
+</div>]]></description><link>https://arthurmolina.github.io/2014/11/05/E-quando-preciso-encontrar-uma-string-especifica-dentro-de-um-banco-mas-nao-sei-em-qual-tabela-nem-coluna.html</link><guid isPermaLink="true">https://arthurmolina.github.io/2014/11/05/E-quando-preciso-encontrar-uma-string-especifica-dentro-de-um-banco-mas-nao-sei-em-qual-tabela-nem-coluna.html</guid><dc:creator><![CDATA[Arthur Molina]]></dc:creator><pubDate>Wed, 05 Nov 2014 00:00:00 GMT</pubDate></item><item><title><![CDATA[Função Social for Dummies ou “Registraram um domínio e não usam… E agora?”]]></title><description><![CDATA[<div class="paragraph">
 <p>A Internet é um espaço. Virtual, mas é um espaço. Possui domínios, vizinhos, endereços… Até a pouco tempo estávamos com um problema sério de limite de endereços. O que chamo de endereço aqui, no internetês é o IP. IP é o endereço que damos a um computador específico. E como eu disse, até a pouco tempo estávamos com um problema, pois usava-se apenas o formato IPv4 para definir o endereço das maquinas. Aquele endereço como 200.124.22.11 é neste formato IPv4. Ele tem um limite de 4,3 bilhões de combinações e atingimos esta marca. Então passamos a usar o IPv6 que possui um limite de 340 undecilhões (ou 3.4×10 elevado a 38) de combinações. Isso significa que antes as “terras” da Internet tinham o tamanho, digamos, da lua. Agora temos o tamanho de Júpiter. Acontece que se já era um problema termos um endereço de 4 sequencias de dígitos até 254, seria muito mais dificil informar 2001:0db8:85a3:08d3:1319:8a2e:0370:7344 (um exemplo de IPv6). Para isso, foi criado o conceito de nome de domínio e um serviço chamado Servidor de Nome de Domínio (DNS ou Domain Name Server).</p>
 </div>
 <div class="paragraph">
