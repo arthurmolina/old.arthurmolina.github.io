@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Artz World]]></title><description><![CDATA[$DO || !$DO : try<br> try: Commando not found.]]></description><link>https://arthurmolina.github.io</link><image><url>https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&amp;h=414.91395793499044&amp;q=40&amp;dpr=2&amp;auto=format&amp;fit=max&amp;crop=faces</url><title>Artz World</title><link>https://arthurmolina.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Thu, 15 Dec 2016 14:13:01 GMT</lastBuildDate><atom:link href="https://arthurmolina.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Genesis]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Artz World]]></title><description><![CDATA[$DO || !$DO : try<br> try: Commando not found.]]></description><link>https://arthurmolina.github.io</link><image><url>https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&amp;h=414.91395793499044&amp;q=40&amp;dpr=2&amp;auto=format&amp;fit=max&amp;crop=faces</url><title>Artz World</title><link>https://arthurmolina.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Thu, 15 Dec 2016 14:15:40 GMT</lastBuildDate><atom:link href="https://arthurmolina.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Genesis]]></title><description><![CDATA[<div class="paragraph">
 <p>Aqui é onde tudo começa.
 Here is where all begins.</p>
 </div>
@@ -261,8 +261,12 @@ select * from master_search_full('string', 'catalogo', 'schema');</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Deixemos claro uma coisa: Eu amo .NET. Uma das grandes emoções da minha carreira profissional foi ter a oportunidade de colocar um adesivo do Coding Horror nas mãos de <a href="http://en.wikipedia.org/wiki/Anders_Hejlsberg">Anders Hejlsberg</a>. Perdoe meu fanboy interior por um momento, mas caramba, eu ainda me arrepio. Devem ter talvez uns cinquenta projetistas de linguagem de classes de computador pelo mundo. Anders é apenas um deles que criou o Turbo Pascal e o Delphi. É graças à experiência de Anders que o .NET começou com uma linguagem tão bem projetada – literalmente o que o Java deveria ter sido em todo o nível concebível – e tem evoluído extraordinariamente de modo continuo em meios práticos pelos últimos 10 anos, aproveitando os pontos fortes de outras linguagens dinamicamente influentes.
-turbopascal</p>
+<p>Deixemos claro uma coisa: Eu amo .NET. Uma das grandes emoções da minha carreira profissional foi ter a oportunidade de colocar um adesivo do Coding Horror nas mãos de <a href="http://en.wikipedia.org/wiki/Anders_Hejlsberg">Anders Hejlsberg</a>. Perdoe meu fanboy interior por um momento, mas caramba, eu ainda me arrepio. Devem ter talvez uns cinquenta projetistas de linguagem de classes de computador pelo mundo. Anders é apenas um deles que criou o Turbo Pascal e o Delphi. É graças à experiência de Anders que o .NET começou com uma linguagem tão bem projetada – literalmente o que o Java deveria ter sido em todo o nível concebível – e tem evoluído extraordinariamente de modo continuo em meios práticos pelos últimos 10 anos, aproveitando os pontos fortes de outras linguagens dinamicamente influentes.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://arthurmolina.github.io/images/turbopascal.png" alt="turbopascal.png">
+</div>
 </div>
 <div class="paragraph">
 <p>Dito tudo isso, é verdade que eu intencionalmente escolhi não usar .NET para o meu próximo projeto. Então você pode esperar encontrar alguém bravo arengando aqui sobre o quão mais feliz estou deixando as amarras opressoras dos meus senhores Microsoft para trás. Livre afinal, livre, pelo menos, graças a Deus todo-poderoso eu sou livre enfim!</p>
@@ -307,6 +311,11 @@ turbopascal</p>
 </div>
 <div class="paragraph">
 <p>Eu não vivo mais no universo Microsoft. Certo, errado, bom, mau, é assim que ele saiu para o projeto que queríamos construir.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://arthurmolina.github.io/images/iamok.png" alt="iamok.png">
+</div>
 </div>
 <div class="paragraph">
 <p>Contudo, eu estaria mentindo se não falasse que eu realmente acredito que o tipo de projeto que estamos construindo no Discourse representa sim o futuro do software. Se você olhar de soslaio um pouco, eu acho que você pode ver um futuro não muito distante onde o .Net é um nicho especializado fora do mainstream.</p>
