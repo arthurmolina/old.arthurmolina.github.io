@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Joystick Mouse com Teensy</title>
+    <meta name="description" content="" />
+    <link href="//fonts.googleapis.com/css?family=Noto+Sans:300,400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="//arthurmolina.github.io/themes/saga/assets/css/style.css?v=1481807658756" rel="stylesheet" type="text/css">
+    <link href="//arthurmolina.github.io/themes/saga/assets/css/animate.min.css?v=1481807658756" rel="stylesheet" type="text/css">
+    <link href="https://arthurmolina.github.io/favicon.ico" rel="shortcut icon">
+    <link rel="canonical" href="https://arthurmolina.github.io/2012/11/17/Joystick-Mouse-com-Teensy.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="Artz World" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Joystick Mouse com Teensy" />
+    <meta property="og:description" content="Tenho feito algumas brincadeiras com computação física e aceitei o meu primeiro projeto de um dispositivo usando microprocessador. Enquanto o componente que preciso pra terminar esse projeto não chega (fiz o pedido pelo MercadoLivre) decidi brincar com outros componentes. Como eu estou fazendo um dispositivo que vai simular alguns comandos" />
+    <meta property="og:url" content="https://arthurmolina.github.io/2012/11/17/Joystick-Mouse-com-Teensy.html" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Joystick Mouse com Teensy" />
+    <meta name="twitter:description" content="Tenho feito algumas brincadeiras com computação física e aceitei o meu primeiro projeto de um dispositivo usando microprocessador. Enquanto o componente que preciso pra terminar esse projeto não chega (fiz o pedido pelo MercadoLivre) decidi brincar com outros componentes. Como eu estou fazendo um dispositivo que vai simular alguns comandos" />
+    <meta name="twitter:url" content="https://arthurmolina.github.io/2012/11/17/Joystick-Mouse-com-Teensy.html" />
+    
+    <script type="application/ld+json">
+null
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="Artz World" href="https://arthurmolina.github.io/rss/" />
+</head>
+<body class="post-template">
+    <header id="header" class="animated fadeIn" style="background-image: url(https://arthurmolina.github.io/images/MouseX.png)">
+    <div class="header-background">
+    <section class="blog-content">
+        <a id="site-url" class="blog-title" href="https://arthurmolina.github.io">Artz World</a>
+        <span class="blog-description">$DO || !$DO : try&lt;br&gt; try: Commando not found.</span>
+        <nav class="links fadeIn animated">
+            <ul>
+                <li class="rss"><a title="RSS Feed" href="/rss/"><i class="fa fa-fw fa-rss-square"></i></a></li>
+        
+            </ul>
+        </nav>
+    </section>
+    <section class="header-content">
+        <h1 class="post-title animated fadeInUp">Joystick Mouse com Teensy</h1>
+        <span class="post-data"><span class="date animated fadeInUp"><i class="fa fa-clock-o"></i> <time class="timesince date" data-timesince="1353121200" datetime="2012-11-17T00:00" title="17 November 2012">4 years ago</time></span>
+            
+            <span class="author animated fadeInUp"><i class="fa fa-user"></i> <a href="https://arthurmolina.github.io/author/arthurmolina/">Arthur Molina</a></span></span>
+    </section>
+    </div>
+</header>
+<main id="main" class="content">
+    <article itemtype="http://schema.org/BlogPosting" class="animated fadeIn content post post">
+        <section class="post-content">
+            <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Tenho feito algumas brincadeiras com computação física e aceitei o meu primeiro projeto de um dispositivo usando microprocessador. Enquanto o componente que preciso pra terminar esse projeto não chega (fiz o pedido pelo MercadoLivre) decidi brincar com outros componentes. Como eu estou fazendo um dispositivo que vai simular alguns comandos de teclado, decidi usar o <a href="http://www.pjrc.com/teensy/">Teensy 2.0</a> que possibilita uma programação de <a href="http://en.wikipedia.org/wiki/Human_interface_device">HID</a> de modo bem fácil. É incrível como é fácil fazer isso com o Teensy.</p>
+</div>
+<div class="paragraph">
+<p>Aproveitei um <a href="http://dx.com/p/repair-parts-replacement-analog-stick-module-for-ps2-controller-black-121340">módulo de joystick</a> que já tinha e adaptei o controle do mouse.</p>
+</div>
+<div class="paragraph">
+<p>Então aqui vai a receita:
+Ingredientes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Teensy 2.0</p>
+</li>
+<li>
+<p>Módulo Joystick KY-023</p>
+</li>
+<li>
+<p>alguns fios</p>
+</li>
+<li>
+<p>Adaptador USB</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_programa_o">Programação</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-C" data-lang="C">int joyPin1 = PIN_F0;
+int joyPin2 = PIN_F1;
+int v1 = 0;
+int v2 = 0;
+int v1Padrao = 0;
+int v2Padrao = 0;
+int passo = 20;
+
+void setup() {
+  Serial.begin(9600);
+  v1Padrao = analogRead(joyPin1);
+  delay(100);
+  v2Padrao = analogRead(joyPin2);
+}
+
+int change(int v, int unchange, int max_state) {
+  if(v &gt; unchange) {
+    return int(passo * ( v – unchange ) / (max_state – unchange));
+  } else if (v &lt; unchange) {
+    return int( (v / unchange * passo) – passo );
+  }
+  return 0;
+}
+
+void loop() {
+  v1 = analogRead(joyPin1);
+  delay(100);
+  v2 = analogRead(joyPin2);
+  Serial.println(“—-“);
+  Serial.print(v1);
+  Serial.print(” – “);
+  Serial.println(change(v1, v1Padrao, 1023));
+  Serial.print(v2);
+  Serial.print(” – “);
+  Serial.println(change(v2, v2Padrao, 997) );
+  Mouse.move( change(v1, 506, 1023) , change(v2, 512, 997) );
+  delay(100);
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_o_esquema_do_fritzing">O Esquema do Fritzing</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="https://arthurmolina.github.io/images/MouseX.png" alt="MouseX.png">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_alguma_explica_es">Alguma explicações</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>O Joystick nada mais é do que dois potenciômetros e ainda um botão (para o caso de você pressionar o joystick pra baixo). O terminal VRx e VRy estão ligados à portas analógicas do Teensy enquanto o terminal SW que é o do botão está conectado a uma porta digital (apesar de não estar sendo usado). As portas analógicas vão do valor Zero a 1023. Só que a partir de alguns testes eu descobri que em um eixo os valores vão de zero a 1023 parando em 506 quando está centralizado e o outro eixo vai de zero a 997 parando em 512. Certamente outras peças terão limites diferentes. A função change faz o serviço de adaptar o valor retornado pelos potenciômetros para o número mais interessante para a função do mouse que deverá ir de -127 a 127.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_problemas">Problemas</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Eu tentei fazer funcionar o botão que vem com ele como clique do mouse, contudo eu não sei por qual motivo as vezes o valor é zero e outras é 1 sem nem mexer no joystick. Outra questão é que não é sempre que ele move pro sentido correto. Não entendi o motivo. Se alguem souber, me explique.</p>
+</div>
+<div class="paragraph">
+<p>Aqui está o resultado:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://arthurmolina.github.io/images/MouseX2.png" alt="MouseX2.png">
+</div>
+</div>
+</div>
+</div>
+        </section>
+
+    
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'artzblog-1'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+    
+    </article>
+
+</main>
+    <footer class="animated fadeIn" id="footer">
+        <section class="colophon">
+          <section class="copyright">Copyright &copy; <span itemprop="copyrightHolder">Artz World</span>. <span rel="license">All Rights Reserved</span>.</section>
+          <section class="poweredby">Published with <a class="icon-ghost" href="http://hubpress.io">HubPress</a></section>
+        </section>
+        <section class="bottom">
+          <section class="attribution">
+            <a href="http://github.com/Reedyn/Saga">Built with <i class="fa fa-heart"></i> and Free and Open-Source Software</a>.
+          </section>
+        </section>
+    </footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+    <script src="//arthurmolina.github.io/themes/saga/assets/js/scripts.js?v=1481807658756"></script>
+    
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-34180643-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+</body>
+</html>
