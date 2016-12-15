@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Artz World]]></title><description><![CDATA[$DO || !$DO : try<br> try: Commando not found.]]></description><link>https://arthurmolina.github.io</link><image><url>https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&amp;h=414.91395793499044&amp;q=40&amp;dpr=2&amp;auto=format&amp;fit=max&amp;crop=faces</url><title>Artz World</title><link>https://arthurmolina.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Wed, 14 Dec 2016 20:23:08 GMT</lastBuildDate><atom:link href="https://arthurmolina.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Genesis]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Artz World]]></title><description><![CDATA[$DO || !$DO : try<br> try: Commando not found.]]></description><link>https://arthurmolina.github.io</link><image><url>https://aboutme.imgix.net/background/arthurmolina_1335995874_67.jpg?w=620&amp;h=414.91395793499044&amp;q=40&amp;dpr=2&amp;auto=format&amp;fit=max&amp;crop=faces</url><title>Artz World</title><link>https://arthurmolina.github.io</link></image><generator>RSS for Node</generator><lastBuildDate>Thu, 15 Dec 2016 12:59:31 GMT</lastBuildDate><atom:link href="https://arthurmolina.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Genesis]]></title><description><![CDATA[<div class="paragraph">
 <p>Aqui é onde tudo começa.
 Here is where all begins.</p>
 </div>
@@ -27,27 +27,27 @@ Here is where all begins.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>#!/bin/sh
+<pre class="highlight"><code class="language-bash" data-lang="bash">#!/bin/sh
 
 mkdir xls
 for i in $(ls *.zip)
 do
-unzip -j $i -x *.csv *.pdf -d xls
+  unzip -j $i -x *.csv *.pdf -d xls
 done
 cd xls
 unoconv -i 59,34,UTF-8 -f csv *
 cd ..
 
 for i in $(ls ./xls/*.csv | grep -v Basico)
-doDadosCenso2010
-lc=`echo $i | tr '[A-Z]' '[a-z]'`
-sed '1d' $i | sed 's/,/./g' | sed 's/X//g' &gt; $lc.csv
+do
+  lc=`echo $i | tr '[A-Z]' '[a-z]'`
+  sed '1d' $i | sed 's/,/./g' | sed 's/X//g' &gt; $lc.csv
 done
 
 for i in $(ls ./xls/*.csv | grep Basico)
 do
-lc=`echo $i | tr '[A-Z]' '[a-z]'`
-sed '1d' $i | sed 's/,/./g' &gt; $lc.csv
+  lc=`echo $i | tr '[A-Z]' '[a-z]'`
+  sed '1d' $i | sed 's/,/./g' &gt; $lc.csv
 done
 
 cat ./xls/basico*.csv.csv &gt; Basico.csv
@@ -75,7 +75,7 @@ cat ./xls/pessoa13*.csv.csv &gt; Pessoa13.csv
 cat ./xls/pessoarenda*.csv.csv &gt; PessoaRenda.csv
 cat ./xls/responsavel01*.csv.csv &gt; Responsavel01.csv
 cat ./xls/responsavel02*.csv.csv &gt; Responsavel02.csv
-cat ./xls/responsavelrenda*.csv.csv &gt; ResponsavelRenda.csv</pre>
+cat ./xls/responsavelrenda*.csv.csv &gt; ResponsavelRenda.csv</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -91,7 +91,7 @@ Depois criei um pequeno script em PHP que converte o XLS com a tabela XLS que fa
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>passthru("unoconv -i 59,34,UTF-8 -f csv DadosCenso2010.xls");
+<pre class="highlight"><code class="language-php" data-lang="php">passthru("unoconv -i 59,34,UTF-8 -f csv DadosCenso2010.xls");
 
 $dic = file('DadosCenso2010.csv');
 $sql_bd = Array();
@@ -102,64 +102,62 @@ $path = '/home/artz/censo/dados/';
 
 $sql_dic = &lt;&lt; CREATE TABLE dicionario
 (
-cod serial,
-banco character varying,
-variavel character varying,
-descricao character varying
+  cod serial,
+  banco character varying,
+  variavel character varying,
+  descricao character varying
 );
 
 SQL_DIC;
 $i = 0;
 foreach($dic as $v) {
-$v = explode(';', $v);
-//$i++;
-//if($i &gt; 10) die;
+  $v = explode(';', $v);
 
-if($tit == true) {
-if($v[0] != '') {
-if(count($sql_bd) &gt; 0) {
-$sql_banco .= "CREATE TABLE " . $titulo . "_2010_SC (\n"
-. implode(",\n", $sql_bd)
-. ");\n\n";
-$sql_populate .= "COPY " . $titulo . "_2010_SC FROM '" . $path . $titulo . ".csv' DELIMITERS ';' CSV;\n";
-$sql_bd = Array();
-echo "Creating $titulo...\n";
-}
-$titulo = str_replace(' ', '_', tiracento($v[0]));
-$desc = $v[1];
-$tit = false;
-}
-} else {
-if($v[0] == '') {
-$tit = true;
-} else {
-$v[0] = str_replace(' ', '_', tiracento($v[0]));
-$sql_dic .= "INSERT INTO dicionario (banco, variavel, descricao) VALUES ('" . $titulo . "_2010_SC', '" .$v[0] . "', '" . $v[1] . "');\n";
-$sql_bd[] = " " . $v[0] . ($v[2]==1 ? " character varying" : " numeric");
-$tit = false;
-}
-}
+  if($tit == true) {
+    if($v[0] != '') {
+      if(count($sql_bd) &gt; 0) {
+        $sql_banco .= "CREATE TABLE " . $titulo . "_2010_SC (\n"
+          . implode(",\n", $sql_bd)
+          . ");\n\n";
+        $sql_populate .= "COPY " . $titulo . "_2010_SC FROM '" . $path . $titulo . ".csv' DELIMITERS ';' CSV;\n";
+        $sql_bd = Array();
+        echo "Creating $titulo...\n";
+      }
+      $titulo = str_replace(' ', '_', tiracento($v[0]));
+      $desc = $v[1];
+      $tit = false;
+    }
+  } else {
+    if($v[0] == '') {
+      $tit = true;
+    } else {
+      $v[0] = str_replace(' ', '_', tiracento($v[0]));
+      $sql_dic .= "INSERT INTO dicionario (banco, variavel, descricao) VALUES ('" . $titulo . "_2010_SC', '" .$v[0] . "', '" . $v[1] . "');\n";
+      $sql_bd[] = " " . $v[0] . ($v[2]==1 ? " character varying" : " numeric");
+      $tit = false;
+    }
+  }
 }
 
 if(count($sql_bd) &gt; 0) {
-$sql_banco .= "CREATE TABLE " . $titulo . "_2010_SC (\n"
-. implode(",\n", $sql_bd)
-. ");\n\n";
-$sql_populate .= "COPY " . $titulo . "_2010_SC FROM '" . $path . $titulo . ".csv' DELIMITERS ';' CSV;\n";
-$sql_bd = Array();
-echo "Creating $titulo...\n";
+  $sql_banco .= "CREATE TABLE " . $titulo . "_2010_SC (\n"
+  . implode(",\n", $sql_bd)
+  . ");\n\n";
+  $sql_populate .= "COPY " . $titulo . "_2010_SC FROM '" . $path . $titulo . ".csv' DELIMITERS ';' CSV;\n";
+  $sql_bd = Array();
+  echo "Creating $titulo...\n";
 }
 
 function tiracento($texto){
-$trocarIsso = array('à','á','â','ã','ä','å','ç','è','é','ê','ë','ì','í','î','ï','ñ','ò','ó','ô','õ','ö','ù','ü','ú','ÿ','À','Á','Â','Ã','Ä','Å','Ç','È','É','Ê','Ë','Ì','Í','Î','Ï','Ñ','Ò','Ó','Ô','Õ','Ö','O','Ù','Ü','Ú','Ÿ',);
-$porIsso = array('a','a','a','a','a','a','c','e','e','e','e','i','i','i','i','n','o','o','o','o','o','u','u','u','y','A','A','A','A','A','A','C','E','E','E','E','I','I','I','I','N','O','O','O','O','O','0','U','U','U','Y',);
-$titletext = str_replace($trocarIsso, $porIsso, $texto);
-return $titletext;
+  $trocarIsso = array('à','á','â','ã','ä','å','ç','è','é','ê','ë','ì','í','î','ï','ñ','ò','ó','ô','õ','ö','ù','ü','ú','ÿ','À','Á','Â','Ã','Ä','Å','Ç','È','É','Ê','Ë','Ì','Í','Î','Ï','Ñ','Ò','Ó','Ô','Õ','Ö','O','Ù','Ü','Ú','Ÿ',);
+  $porIsso = array('a','a','a','a','a','a','c','e','e','e','e','i','i','i','i','n','o','o','o','o','o','u','u','u','y','A','A','A','A','A','A','C','E','E','E','E','I','I','I','I','N','O','O','O','O','O','0','U','U','U','Y',);
+  $titletext = str_replace($trocarIsso, $porIsso, $texto);
+  return $titletext;
 }
 
 $f = fopen('out.sql', 'w');
 fwrite($f, $sql_dic . "\n\n" . $sql_banco . "\n\n" . $sql_populate);
-?&gt;</pre>
+?&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
