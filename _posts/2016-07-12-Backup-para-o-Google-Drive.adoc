@@ -1,5 +1,6 @@
 = Backup para o Google Drive
 :published_at: 2016-07-12
+:hp-image: http://static1.purebreak.com.br/articles/3/20/75/3/@/104695-com-o-google-drive-voce-pode-fazer-950x0-1.jpg
 
 Faz um tempo que não publico nada, mas hoje decidi colocar uma dica que acabei de usar.
 
