@@ -1,5 +1,6 @@
 = Joystick Mouse com Teensy
 :published_at: 2012-11-17
+:hp-image: https://arthurmolina.github.io/images/MouseX.png
 :uri-teensy: http://www.pjrc.com/teensy/
 :uri-hid: http://en.wikipedia.org/wiki/Human_interface_device
 :uri-joystick: http://dx.com/p/repair-parts-replacement-analog-stick-module-for-ps2-controller-black-121340
