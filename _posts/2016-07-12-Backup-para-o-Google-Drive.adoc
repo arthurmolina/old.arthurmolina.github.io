@@ -1,0 +1,46 @@
+= Backup para o Google Drive
+:published_at: 2016-07-12
+
+Faz um tempo que não publico nada, mas hoje decidi colocar uma dica que acabei de usar.
+
+O que aconteceu foi o seguinte: dou manutenção alguns servidores linux com vários sites e, obviamente, preciso fazer backup dos mesmos. Os servidores já possuem um backup automático, mas é um backup de máquina e não de cada site. Pensei num modo onde barato de fazer um backup de modo automático e por site. A melhor maneira que achei foi disponibilizar minha conta do Google Drive (que já pago uma grana pra guardar meus bregueço).
+
+Então, como enviar um arquivo para o Google Drive?
+
+Encontrei um programinha maroto chamado Gdrive escrito em Go (ainda quero estudar esta linguagem mais a fundo). O endereço é https://github.com/prasmussen/gdrive. Basta baixar o executável, jogar no /bin (eu fiz isso, não é obrigatório) e dar os privilégios (chmod +x). Além disso, quando você executa pela primeira vez, ele passa um link:
+
+----
+artz@r2d2:~# drive
+Go to the following link in your browser:
+
+https://accounts.google.com/o/oauth2/auth?client_id=3116223-7n0vf5akedoe99eg.apps.googleusercontent.com&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive&state=state
+
+Enter verification code:
+----
+
+Acesse esse link de um browser, pegue o código e informe ao programa e pronto. Da próxima vez que rodar o drive ele já vai informar o help dele. Ah mas eu to com medinho de pegarem as minhas informações no servidor. Ok, então apaga o ~/.gdrive e ta tudo beleza.
+
+Bem, não vou ensinar como se usa o bichinho, mas é muito fácil e o help dele é bem simples. Talvez confunda um pouco o fato de ele trabalhar sempre com o Id do arquivo ou pasta. De qualquer maneira é importante você saber qual o Id da pasta onde você vai guardar os backups. Do contrário ele vai jogar no root do Drive.
+
+Finalmente segue o script que criei:
+
+----
+#!/bin/bash
+NOW=$(date +%Y%m%d)
+USERNAME=%%user_site%%
+PASSWORD=%%12345%%
+DATABASE=%%site%%
+SITE_DIR=%%/home/user/site%%
+BACKUP_DIR=%%backups%%
+GDRIVE_DIR=%%0Bytga5cE1nS1lyOHZmTldBTzYweFE%%
+
+mysqldump -u $USERNAME -p$PASSWORD $DATABASE > $SITE_DIR/database.sql
+zip $BACKUP_DIR/$SITE_DIR$NOW.zip $SITE_DIR/ -r
+rm $SITE_DIR/database.sql
+
+# Joga o arquivo dentro do meu Google Drive na pasta de backups
+drive upload –file $BACKUP_DIR/$SITE_DIR$NOW.zip -p $GDRIVE_DIR
+rm $BACKUP_DIR/$SITE_DIR$NOW.zip
+----
+
+O que está entre %% é o que é para ser alterado. Fim.
