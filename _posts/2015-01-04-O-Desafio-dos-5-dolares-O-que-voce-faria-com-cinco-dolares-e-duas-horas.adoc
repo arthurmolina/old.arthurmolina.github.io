@@ -1,5 +1,6 @@
 = O Desafio dos 5 dolares! – O que você faria com cinco dolares e duas horas?
 :published_at: 2015-01-04
+:hp-image: http://www.duoparadigms.com/wp-content/uploads/2015/06/dollar-726881_1280.jpg
 :uri-tina: http://www.psychologytoday.com/experts/tina-seelig
 :uri-psy: http://www.psychologytoday.com/blog/creativityrulz/200908/the-5-challenge
 
