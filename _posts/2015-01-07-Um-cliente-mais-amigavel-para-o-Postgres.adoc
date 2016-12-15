@@ -1,0 +1,8 @@
+= Um cliente mais amigável para o Postgres
+:published_at: 2015-01-07
+:hp-image: http://pgcli.com/images/image01.png
+:uri-pgcli: http://pgcli.com/
+
+Se você gosta de um command-line mas ao mesmo tempo não gostaria de perder a amigabilidade do auto-completion vá de {uri-pgcli}[PgCli].
+
+Fácil e rápido de instalar. :)
